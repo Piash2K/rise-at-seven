@@ -1,11 +1,12 @@
-import './App.css'
+import "./App.css";
+import Home from "./pages/Home";
 
 function App() {
-  
-
   return (
-    <div> <p className='text-3xl font-bold bg-amber-400'>Hello from react js</p></div>
-  )
+    <>
+      <Home></Home>
+    </>
+  );
 }
 
-export default App
+export default App;
