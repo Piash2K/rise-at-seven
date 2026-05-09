@@ -4,6 +4,7 @@ import ClientLogoMarquee from "../components/ClientLogoMarquee";
 import DemandDiscoverySection from "../components/DemandDiscoverySection";
 import FeaturedWork from "../components/FeaturedWork";
 import Services from "../components/Services";
+import ChaseMarquee from "../components/ChaseMarquee";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <DemandDiscoverySection />
       <FeaturedWork></FeaturedWork>
       <Services />
+      <ChaseMarquee />
     </>
   );
 }
