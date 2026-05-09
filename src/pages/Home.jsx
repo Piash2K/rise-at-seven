@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import ClientLogoMarquee from "../components/ClientLogoMarquee";
 import DemandDiscoverySection from "../components/DemandDiscoverySection";
 import FeaturedWork from "../components/FeaturedWork";
+import Services from "../components/Services";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <ClientLogoMarquee />
       <DemandDiscoverySection />
       <FeaturedWork></FeaturedWork>
+      <Services />
     </>
   );
 }
