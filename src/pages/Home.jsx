@@ -7,6 +7,7 @@ import Services from "../components/Services";
 import ChaseMarquee from "../components/ChaseMarquee";
 import LegacyInTheMaking from "../components/LegacyInTheMaking";
 import WhatsNewSection from "../components/WhatsNewSection";
+import ReadyToRiseSection from "../components/ReadyToRiseAtSeven";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <ChaseMarquee />
       <LegacyInTheMaking />
       <WhatsNewSection></WhatsNewSection>
+      <ReadyToRiseSection />
     </>
   );
 }
