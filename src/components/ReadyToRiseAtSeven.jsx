@@ -169,16 +169,6 @@ const ReadyToRiseHeading = () => {
           </div>
         </div>
       </div>
-      
-      {/* Extra spacer for testing scroll animation */}
-      <div className="h-[200vh] bg-liner-to-b from-transparent via-gray-100/50 to-transparent lg:block hidden">
-        <div className="flex items-center justify-center h-full">
-          <div className="text-center">
-            <p className="text-gray-400 font-mono text-sm mb-2">⬇️ Scroll to test animation ⬇️</p>
-            <p className="text-gray-300 text-xs">The heading above should animate as you scroll</p>
-          </div>
-        </div>
-      </div>
     </>
   );
 };
