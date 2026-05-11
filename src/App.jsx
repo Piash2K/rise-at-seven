@@ -67,7 +67,7 @@ function MintRevealOverlay() {
           rx: revealRadius * 1.35,
           ry: revealRadius * 1.05,
         },
-        duration: 2,
+        duration: 1.25,
         ease: "power2.out",
       });
     });
@@ -115,7 +115,7 @@ function MintRevealOverlay() {
           </mask>
         </defs>
 
-        <rect width="100%" height="100%" fill="#b8f3df" mask="url(#mint-reveal-mask)" />
+        <rect width="100%" height="100%" fill="#f3f1eb" mask="url(#mint-reveal-mask)" />
       </svg>
     </div>
   );

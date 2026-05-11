@@ -57,7 +57,7 @@ export default function ChaseMarquee() {
   }, []);
 
   return (
-    <div className="overflow-hidden bg-white">
+    <div className="overflow-hidden">
       <section className="w-full py-0">
         <div className="w-full px-0">
           <a 

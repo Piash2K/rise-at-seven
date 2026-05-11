@@ -1,2 +1,11 @@
 @import "@fortawesome/fontawesome-free/css/all.css";
 @import "tailwindcss";
+
+html,
+body {
+  background-color: #f4f1ec;
+}
+
+#root {
+  background-color: #f4f1ec;
+}
