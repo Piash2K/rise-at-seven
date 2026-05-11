@@ -136,51 +136,84 @@ const PictureLogo = ({ logo, sizeClass, imageClass = "" }) => (
   </div>
 );
 
+// Helper function to get random image
+const getRandomImage = () => {
+  const randomIndex = Math.floor(Math.random() * bannerImages.length);
+  return bannerImages[randomIndex];
+};
+
 export default function Hero() {
-  const [activeImage, setActiveImage] = useState(0);
+  const [randomImage, setRandomImage] = useState(null);
+  const [phase1Complete, setPhase1Complete] = useState(false);
+  const [phase2Complete, setPhase2Complete] = useState(false);
 
   useEffect(() => {
-    const timer = window.setInterval(() => {
-      setActiveImage((index) => (index + 1) % bannerImages.length);
-    }, 4500);
-
-    return () => window.clearInterval(timer);
+    const selectedImage = getRandomImage();
+    setRandomImage(selectedImage);
+    
+    // PHASE 1: Text reveals from bottom
+    const phase1Timer = setTimeout(() => {
+      setPhase1Complete(true);
+    }, 100);
+    
+    // PHASE 2: After 1 second, image expands horizontally
+    const phase2Timer = setTimeout(() => {
+      setPhase2Complete(true);
+    }, 1200);
+    
+    return () => {
+      clearTimeout(phase1Timer);
+      clearTimeout(phase2Timer);
+    };
   }, []);
 
-  const banner = bannerImages[activeImage];
+  // Show loading state while picking random image
+  if (!randomImage) {
+    return (
+      <section className="relative isolate mx-0 min-h-screen overflow-hidden bg-[#9d7a47] text-white sm:mx-1.75 sm:mb-3 sm:mt-1 sm:min-h-[calc(100vh-16px)] sm:rounded-[25px]">
+        <div className="absolute inset-0 -z-30 bg-[#9d7a47]" />
+        <div className="col-start-1 row-start-1 relative z-20 flex min-h-screen items-center justify-center bg-slate-950/30 px-4">
+          <div className="flex flex-col items-center">
+            <div className="h-8 w-8 animate-spin rounded-full border-2 border-white border-t-transparent" />
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="relative isolate mx-0 min-h-screen overflow-hidden bg-[#9d7a47] text-white sm:mx-1.75 sm:mb-3 sm:mt-1 sm:min-h-[calc(100vh-16px)] sm:rounded-[25px]">
+      {/* Background blur layer */}
       <div className="absolute inset-0 -z-30 bg-[#9d7a47]" aria-hidden="true">
-        {bannerImages.map((image, index) => (
-          <img
-            key={image.src}
-            src={image.src}
-            alt=""
-            className={`absolute inset-0 h-full w-full scale-110 object-cover blur-[22px] transition-opacity duration-1000 ${image.backgroundClass} ${
-              index === activeImage ? "opacity-100" : "opacity-0"
-            }`}
-          />
-        ))}
+        <img
+          src={randomImage.src}
+          alt=""
+          className={`absolute inset-0 h-full w-full scale-110 object-cover blur-[8px] transition-opacity duration-1000 ${randomImage.backgroundClass}`}
+        />
       </div>
 
+      {/* Gradient overlays */}
       <div className="absolute inset-0 -z-20 bg-linear-to-r from-[rgba(25,19,14,0.62)] via-[rgba(108,81,52,0.16)] to-[rgba(177,130,58,0.42)]" />
       <div className="absolute inset-0 -z-10 bg-linear-to-b from-white/3 to-[rgba(28,21,18,0.43)]" />
 
+      {/* Bottom left text - NO ANIMATION */}
       <div className="absolute bottom-5.5 left-5 z-6 hidden max-w-111.25 text-[16px] font-medium leading-[1.45] tracking-[-0.48px] text-white lg:block">
         Organic media planners creating, distributing &amp; optimising
         <br />
         <strong className="font-extrabold">search-first content</strong> for SEO, Social, PR, Ai and LLM search
       </div>
 
+      {/* Bottom right text - NO ANIMATION */}
       <div className="absolute bottom-5.5 right-3.75 z-6 hidden max-w-44.5 text-[16px] font-medium leading-[1.45] tracking-[-0.48px] text-white lg:block">
         <strong className="font-extrabold">4 Global Offices serving</strong>
         <br />
         UK, USA (New York) &amp; EU
       </div>
 
-      <div className="col-start-1 row-start-1 z-20 relative flex min-h-screen justify-center items-center bg-slate-950/30 px-4 sm:min-h-[calc(100vh-16px)]">
+      {/* Main content */}
+      <div className="col-start-1 row-start-1 relative z-20 flex min-h-screen items-center justify-center bg-slate-950/30 px-4 sm:min-h-[calc(100vh-16px)]">
         <div className="flex flex-col items-center">
+          {/* Awards section - NO ANIMATION */}
           <div className="mb-5 flex flex-col items-center justify-center">
             <div className="mb-2 max-w-52 text-balance text-center text-xs font-medium uppercase leading-tight tracking-[-0.01em] text-white">
               #1 Most recommended content marketing agency
@@ -195,33 +228,119 @@ export default function Hero() {
             </div>
           </div>
 
-          <h1
-            className="relative m-0 inline-flex flex-col flex-wrap justify-center text-balance text-center font-medium tracking-tight text-white text-[clamp(3.75rem,13vw,4.5rem)] leading-[0.9] md:text-[clamp(4.5rem,7vw,6rem)] lg:text-[clamp(6rem,7vw,7.2rem)] xl:text-[clamp(6.8rem,7vw,7.5rem)]"
-            data-delay="0.3"
-          >
+          {/* Main Heading - TWO PHASE ANIMATION */}
+          <h1 className="relative m-0 inline-flex flex-col flex-wrap justify-center text-balance text-center font-medium tracking-tight text-white text-[clamp(3.75rem,13vw,4.5rem)] leading-[0.9] md:text-[clamp(4.5rem,7vw,6rem)] lg:text-[clamp(6rem,7vw,7.2rem)] xl:text-[clamp(6.8rem,7vw,7.5rem)]">
+            {/* First line: We Create - PHASE 1 only (bottom to top) */}
             <div className="relative flex flex-wrap justify-center gap-x-[0.08em] text-center">
-              <div className="inline">We</div>
-              <div className="inline">Create</div>
+              <div 
+                className={`inline-block transition-all duration-700 ease-out ${
+                  phase1Complete ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
+                }`}
+                style={{ transitionDelay: '0ms' }}
+              >
+                We
+              </div>
+              <div 
+                className={`inline-block transition-all duration-700 ease-out ${
+                  phase1Complete ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
+                }`}
+                style={{ transitionDelay: '100ms' }}
+              >
+                Create
+              </div>
             </div>
-            <div className="relative flex flex-wrap items-center justify-center gap-x-[0.08em] text-center">
-              <div className="inline">Category</div>
-              <div className="inline-flex h-[0.86em] w-[0.86em] shrink-0 overflow-hidden rounded-[15%] bg-black/10">
-                <div className="relative h-full w-full">
+
+            {/* Second line: Category + Image + Leaders */}
+            <div className="relative flex items-center justify-center text-center">
+              {/* Category - moves left when image expands */}
+              <div 
+                className={`inline-block transition-all duration-700 ease-out ${
+                  phase1Complete ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
+                } ${phase2Complete ? '-translate-x-3 md:-translate-x-4 lg:-translate-x-5 xl:-translate-x-6' : ''}`}
+                style={{ 
+                  transitionDelay: '200ms',
+                  transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+                }}
+              >
+                Category
+              </div>
+
+              {/* Normal space - visible in Phase 1, minimal in Phase 2 */}
+              <span 
+                className={`inline-block transition-all duration-700 ease-out ${
+                  phase2Complete ? 'w-0' : 'w-0'
+                }`}
+                style={{ 
+                  transitionDelay: '200ms',
+                  transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+                }}
+              > </span>
+              
+              {/* Image - Starts as LINE, expands width */}
+              <div 
+                className={`inline-flex items-center justify-center transition-all duration-700 ease-out ${
+                  phase2Complete ? 'mx-0' : 'mx-0'
+                }`}
+                style={{ 
+                  transitionTimingFunction: 'cubic-bezier(0.68, -0.55, 0.265, 1.55)'
+                }}
+              >
+                <div 
+                  className={`relative overflow-hidden rounded-[15%] bg-black/10 transition-all duration-700 ease-out ${
+                    phase2Complete ? 'opacity-100' : 'opacity-100'
+                  }`}
+                  style={{ 
+                    width: phase2Complete ? '0.86em' : '0px',
+                    height: '0.86em',
+                    transitionTimingFunction: 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+                    transitionProperty: 'width'
+                  }}
+                >
                   <img
-                    src={banner.src}
-                    alt={banner.alt}
-                    className={`absolute inset-0 h-full w-full object-cover ${banner.inlineClass}`}
+                    src={randomImage.src}
+                    alt={randomImage.alt}
+                    className={`absolute inset-0 h-full w-full object-cover transition-all duration-500 ${
+                      phase2Complete ? 'scale-100 rotate-0' : 'scale-110 -rotate-6'
+                    } ${randomImage.inlineClass}`}
+                    style={{
+                      transitionTimingFunction: 'cubic-bezier(0.68, -0.55, 0.265, 1.55)'
+                    }}
                   />
                 </div>
               </div>
-              <div className="inline">Leaders</div>
+
+              {/* Normal space after image */}
+              <span 
+                className={`inline-block transition-all duration-700 ease-out ${
+                  phase2Complete ? 'w-0' : 'w-[0.2em]'
+                }`}
+                style={{ 
+                  transitionDelay: '300ms',
+                  transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+                }}
+              > </span>
+
+              {/* Leaders - moves right when image expands */}
+              <div 
+                className={`inline-block transition-all duration-700 ease-out ${
+                  phase1Complete ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
+                } ${phase2Complete ? 'translate-x-3 md:translate-x-4 lg:translate-x-5 xl:translate-x-6' : ''}`}
+                style={{ 
+                  transitionDelay: '300ms',
+                  transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+                }}
+              >
+                Leaders
+              </div>
             </div>
           </h1>
 
+          {/* Subheading - NO ANIMATION */}
           <div className="relative mt-2 inline-flex flex-wrap justify-start text-balance text-left text-lg font-medium leading-tight tracking-tight text-white md:text-xl xl:mt-4 xl:text-3xl xl:leading-none">
             on every searchable platform
           </div>
 
+          {/* Platform Logos - NO ANIMATION */}
           <div className="relative z-0 mt-12 hidden w-full justify-center gap-x-14 overflow-hidden 2xl:flex">
             {platformLogos.map((logo) => (
               <PictureLogo
