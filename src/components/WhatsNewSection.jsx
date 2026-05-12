@@ -1,37 +1,38 @@
-import { useEffect, useRef } from "react";
-import Swiper from "swiper";
-import "swiper/css";
-import "swiper/css/pagination";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const WhatsNewSection = () => {
-  const swiperRef = useRef(null);
-  const paginationRef = useRef(null);
-
-  useEffect(() => {
-    if (swiperRef.current && paginationRef.current) {
-      const swiper = new Swiper(swiperRef.current, {
-        slidesPerView: 1.2,
-        spaceBetween: 20,
-        pagination: {
-          el: paginationRef.current,
-          type: "progressbar",
-        },
-        breakpoints: {
-          768: {
-            slidesPerView: 2.2,
-          },
-          1024: {
-            slidesPerView: 3.2,
-          },
-        },
-      });
-
-      return () => {
-        if (swiper) swiper.destroy();
-      };
+  const newsItems = [
+    {
+      id: 1,
+      title: "Rise at Seven Appoints Hollie Lovell as Senior Operations Lead",
+      author: "Ray Saddiq",
+      readTime: "3 mins",
+      href: "https://riseatseven.com/blog/rise-at-seven-appoints-new-senior-ops-lead/",
+      imgSrc: "https://rise-atseven.transforms.svdcdn.com/production/images/0B5A8137.jpg?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1778062638&s=b59fc4a9963beea28e9f8a2a8d45c1b8",
+      imgSrcSet: "https://rise-atseven.transforms.svdcdn.com/production/images/0B5A8137.jpg?w=400&h=400&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1778062638&s=cc5aeea20f2c582efb622c4b2e0baa15 400w, https://rise-atseven.transforms.svdcdn.com/production/images/0B5A8137.jpg?w=800&h=800&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1778062638&s=c1f448d85e1b3664a2da9764a7496bfd 800w",
+      authorImg: "https://rise-atseven.transforms.svdcdn.com/production/images/blog/import/WhatsApp-Image-2025-06-23-at-22.50.52.jpeg?w=1231&h=1145&q=100&auto=format&fit=crop&dm=1750949501&s=fe120a0db5c7acc0cd0c72601fb4ba89"
+    },
+    {
+      id: 2,
+      title: "Rise at Seven Exits Sheffield and Triples Manchester as new HQ as they go for global expansion",
+      author: "Ray Saddiq",
+      readTime: "2 mins",
+      href: "https://riseatseven.com/blog/rise-at-seven-announces-new-global-hq-in-manchester/",
+      imgSrc: "https://rise-atseven.transforms.svdcdn.com/production/images/WRAS-Manchester-01.png?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1778084605&s=e809ec791a3a4026cf5673426e4d3395",
+      imgSrcSet: "https://rise-atseven.transforms.svdcdn.com/production/images/WRAS-Manchester-01.png?w=400&h=400&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1778084605&s=58d95c3de719797c1528ef86ea7c1349 400w",
+      authorImg: "https://rise-atseven.transforms.svdcdn.com/production/images/blog/import/WhatsApp-Image-2025-06-23-at-22.50.52.jpeg?w=1231&h=1145&q=100&auto=format&fit=crop&dm=1750949501&s=fe120a0db5c7acc0cd0c72601fb4ba89"
+    },
+    {
+      id: 3,
+      title: "Ryan McNamara Is Now Rise at Seven's Global Operations Director",
+      author: "Carrie Rose",
+      readTime: "2 mins",
+      href: "https://riseatseven.com/blog/global-operations-director-promotion/",
+      imgSrc: "https://rise-atseven.transforms.svdcdn.com/production/images/0B5A7827.jpg?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1777514348&s=161c413ad12ef90895fad390f5521371",
+      imgSrcSet: "https://rise-atseven.transforms.svdcdn.com/production/images/0B5A7827.jpg?w=400&h=400&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1777514348&s=69c3ee1d52b842d82374bc94dccd5e57 400w",
+      authorImg: "https://rise-atseven.transforms.svdcdn.com/production/images/blog/import/84b3917f166d7feb4c2376f78ce33ae432656999.jpg?w=1080&h=1080&q=100&auto=format&fit=crop&dm=1750847674&s=8bef9798a0d24a5970f561908d301967"
     }
-  }, []);
+  ];
 
   return (
     <section className="w-full pb-12 xl:pb-24">
@@ -42,7 +43,7 @@ const WhatsNewSection = () => {
             <div className="grid grid-cols-12 md:border-b md:border-gray-200 md:pb-5 gap-y-3 md:gap-y-7 gap-x-3 md:gap-x-5">
               <div className="col-span-11 md:col-span-9 flex items-end">
                 <h2
-                  className=" flex-wrap text-balance relative pointer-fine:pr-1 pointer-fine:pb-2 pointer-fine:mt-4 pointer-fine:-mb-3 flex flex-col text-left justify-start text-gray-900 text-6xl leading-[0.9] md:text-7xl md:leading-none lg:text-7xl lg:leading-none 2xl:text-8xl 2xl:leading-[0.9] font-sans-primary font-medium tracking-tight js-heading-animate"
+                  className="flex-wrap text-balance relative pointer-fine:pr-1 pointer-fine:pb-2 pointer-fine:mt-4 pointer-fine:-mb-3 flex flex-col text-left justify-start text-gray-900 text-6xl leading-[0.9] md:text-7xl md:leading-none lg:text-7xl lg:leading-none 2xl:text-8xl 2xl:leading-[0.9] font-sans-primary font-medium tracking-tight js-heading-animate"
                   aria-label="What'sNew"
                 >
                   <div
@@ -147,7 +148,7 @@ const WhatsNewSection = () => {
                         </div>
                       </div>
                       <div
-                        className=" shrink-0 flex bg-black/10 relative overflow-hidden mr-2 pointer-fine:mr-0 js-image-wrapper"
+                        className="shrink-0 flex bg-black/10 relative overflow-hidden mr-2 pointer-fine:mr-0 js-image-wrapper"
                         style={{
                           marginRight: "16px",
                           borderRadius: "15%",
@@ -270,244 +271,60 @@ const WhatsNewSection = () => {
             </div>
           </div>
 
-          {/* Carousel Section */}
-          <div className="col-span-12 lg:px-7">
-            <div className="w-full swiper js-carousel-64" ref={swiperRef}>
-              <div className="ease-smooth swiper-wrapper">
-                {/* Slide 1 */}
-                <div
-                  className="py-2 swiper-slide group"
-                  style={{ width: "821.333px", marginRight: "20px" }}
+          {/* 3 Column Grid for News Items */}
+          <div className="col-span-12 px-4 md:px-7">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7">
+              {newsItems.map((item) => (
+                <a
+                  key={item.id}
+                  href={item.href}
+                  className="cursor-trigger group flex flex-col items-start gap-y-5 transition-all duration-300 hover:-translate-y-2"
                 >
-                  <a
-                    href="https://riseatseven.com/blog/rise-at-seven-appoints-new-senior-ops-lead/"
-                    className="cursor-trigger w-full flex flex-col items-start gap-y-5 transition-transform duration-300 group-hover:-translate-y-2 circle-mask-container"
-                  >
-                    <div className="w-full grid">
-                      <div className="col-start-1 row-start-1 z-20 p-3"></div>
-                      <div className="col-start-1 row-start-1 z-10 relative rounded-2xl overflow-hidden aspect-square lg:rounded-3xl">
-                        <div className="w-full h-full transition-all duration-700 scale-120 circle-mask blur-0 group-hover:blur-md">
-                          <picture>
-                            <source
-                              type="image/webp"
-                              srcSet="https://rise-atseven.transforms.svdcdn.com/production/images/0B5A8137.jpg?w=400&h=400&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1778062638&s=cc5aeea20f2c582efb622c4b2e0baa15 400w, https://rise-atseven.transforms.svdcdn.com/production/images/0B5A8137.jpg?w=800&h=800&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1778062638&s=c1f448d85e1b3664a2da9764a7496bfd 800w, https://rise-atseven.transforms.svdcdn.com/production/images/0B5A8137.jpg?w=1200&h=1200&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1778062638&s=2cb8dafd9577761f7614e12b191332d2 1200w, https://rise-atseven.transforms.svdcdn.com/production/images/0B5A8137.jpg?w=1600&h=1600&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1778062638&s=956fbe55cbc565d2ee1fbf6106ffda9e 1600w"
-                              sizes="100vw"
-                            />
+                  <div className="w-full relative rounded-2xl lg:rounded-3xl overflow-hidden">
+                    <div className="aspect-square w-full">
+                      <picture>
+                        <source
+                          type="image/webp"
+                          srcSet={item.imgSrcSet}
+                          sizes="(max-width: 768px) 90vw, (max-width: 1024px) 45vw, 30vw"
+                        />
+                        <img
+                          src={item.imgSrc}
+                          alt={item.title}
+                          className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                          loading="lazy"
+                        />
+                      </picture>
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    <div className="absolute inset-0 backdrop-blur-0 group-hover:backdrop-blur-sm transition-all duration-700" />
+                  </div>
+                  
+                  <div className="flex flex-col items-start gap-y-3 w-full">
+                    <div className="flex items-start gap-1 mt-1">
+                      <div className="inline-flex items-center font-sans-primary font-medium tracking-tight leading-none rounded-full text-sm gap-x-2 px-3 py-1 min-h-7 xl:min-h-8 xl:py-1.5 xl:text-base text-gray-900 bg-gray-100">
+                        <div className="inline-flex items-center justify-center -ml-1.5">
+                          <div className="rounded-full overflow-hidden -mr-1 w-5 h-5">
                             <img
-                              src="https://rise-atseven.transforms.svdcdn.com/production/images/0B5A8137.jpg?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1778062638&s=b59fc4a9963beea28e9f8a2a8d45c1b8"
-                              alt="0 B5 A8137"
-                              className="h-full w-full object-cover absolute top-0 left-0 transition-opacity"
-                              loading="lazy"
-                              style={{ opacity: 1 }}
+                              src={item.authorImg}
+                              alt=""
+                              className="w-full h-full object-cover"
                             />
-                          </picture>
-                        </div>
-                      </div>
-                      <div className="col-start-1 row-start-1 aspect-square relative rounded-2xl overflow-hidden lg:rounded-3xl">
-                        <picture>
-                          <source
-                            type="image/webp"
-                            srcSet="https://rise-atseven.transforms.svdcdn.com/production/images/0B5A8137.jpg?w=400&h=400&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1778062638&s=cc5aeea20f2c582efb622c4b2e0baa15 400w"
-                            sizes="100vw"
-                          />
-                          <img
-                            src="https://rise-atseven.transforms.svdcdn.com/production/images/0B5A8137.jpg?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1778062638&s=b59fc4a9963beea28e9f8a2a8d45c1b8"
-                            alt="0 B5 A8137"
-                            className="h-full w-full object-cover absolute top-0 left-0 transition-opacity"
-                            loading="lazy"
-                            style={{ opacity: 1 }}
-                          />
-                        </picture>
-                      </div>
-                    </div>
-                    <div className="flex flex-col items-start gap-y-3">
-                      <div className="flex items-start gap-1 mt-1">
-                        <div className="inline-flex items-center font-sans-primary font-medium tracking-tight leading-none rounded-full text-sm gap-x-2 px-3 py-1 min-h-7 xl:min-h-8 xl:py-1.5 xl:text-base text-gray-300 bg-white">
-                          <div className="inline-flex items-center justify-center -ml-1.5">
-                            <div className="rounded-full overflow-hidden -mr-1 w-5 h-5">
-                              <img
-                                src="https://rise-atseven.transforms.svdcdn.com/production/images/blog/import/WhatsApp-Image-2025-06-23-at-22.50.52.jpeg?w=1231&h=1145&q=100&auto=format&fit=crop&dm=1750949501&s=fe120a0db5c7acc0cd0c72601fb4ba89"
-                                alt=""
-                                className="w-full h-full object-cover"
-                              />
-                            </div>
-                          </div>
-                          <div>Ray Saddiq</div>
-                        </div>
-                        <div className="inline-flex items-center font-sans-primary font-medium tracking-tight leading-none rounded-full text-sm gap-x-2 px-3 py-1 min-h-7 xl:min-h-8 xl:py-1.5 xl:text-base text-gray-300 bg-white">
-                          <i
-                            className="fa-sharp fa-regular fa-stopwatch"
-                            aria-hidden="true"
-                          ></i>
-                          <div>3 mins</div>
-                        </div>
-                      </div>
-                      <h2 className="inline-flex flex-wrap text-balance relative text-left justify-start text-gray-900 text-2xl leading-none xl:text-3xl xl:leading-none font-sans-primary font-medium tracking-tight js-heading">
-                        Rise at Seven Appoints Hollie Lovell as Senior
-                        Operations Lead
-                      </h2>
-                    </div>
-                  </a>
-                </div>
-
-                {/* Slide 2 */}
-                <div
-                  className="py-2 swiper-slide group"
-                  style={{ width: "821.333px", marginRight: "20px" }}
-                >
-                  <a
-                    href="https://riseatseven.com/blog/rise-at-seven-announces-new-global-hq-in-manchester/"
-                    className="cursor-trigger w-full flex flex-col items-start gap-y-5 transition-transform duration-300 group-hover:-translate-y-2 circle-mask-container"
-                  >
-                    <div className="w-full grid">
-                      <div className="col-start-1 row-start-1 z-20 p-3"></div>
-                      <div className="col-start-1 row-start-1 z-10 relative rounded-2xl overflow-hidden aspect-square lg:rounded-3xl">
-                        <div className="w-full h-full transition-all duration-700 scale-120 circle-mask blur-0 group-hover:blur-md">
-                          <picture>
-                            <source
-                              type="image/webp"
-                              srcSet="https://rise-atseven.transforms.svdcdn.com/production/images/WRAS-Manchester-01.png?w=400&h=400&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1778084605&s=58d95c3de719797c1528ef86ea7c1349 400w"
-                              sizes="100vw"
-                            />
-                            <img
-                              src="https://rise-atseven.transforms.svdcdn.com/production/images/WRAS-Manchester-01.png?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1778084605&s=e809ec791a3a4026cf5673426e4d3395"
-                              alt="WRAS Manchester 01"
-                              className="h-full w-full object-cover absolute top-0 left-0 transition-opacity"
-                              loading="lazy"
-                              style={{ opacity: 1 }}
-                            />
-                          </picture>
-                        </div>
-                      </div>
-                      <div className="col-start-1 row-start-1 aspect-square relative rounded-2xl overflow-hidden lg:rounded-3xl">
-                        <picture>
-                          <source
-                            type="image/webp"
-                            srcSet="https://rise-atseven.transforms.svdcdn.com/production/images/WRAS-Manchester-01.png?w=400&h=400&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1778084605&s=58d95c3de719797c1528ef86ea7c1349 400w"
-                            sizes="100vw"
-                          />
-                          <img
-                            src="https://rise-atseven.transforms.svdcdn.com/production/images/WRAS-Manchester-01.png?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1778084605&s=e809ec791a3a4026cf5673426e4d3395"
-                            alt="WRAS Manchester 01"
-                            className="h-full w-full object-cover absolute top-0 left-0 transition-opacity"
-                            loading="lazy"
-                            style={{ opacity: 1 }}
-                          />
-                        </picture>
-                      </div>
-                    </div>
-                    <div className="flex flex-col items-start gap-y-3">
-                      <div className="flex items-start gap-1 mt-1">
-                        <div className="inline-flex items-center font-sans-primary font-medium tracking-tight leading-none rounded-full text-sm gap-x-2 px-3 py-1 min-h-7 xl:min-h-8 xl:py-1.5 xl:text-base text-gray-300 bg-white">
-                          <div className="inline-flex items-center justify-center -ml-1.5">
-                            <div className="rounded-full overflow-hidden -mr-1 w-5 h-5">
-                              <img
-                                src="https://rise-atseven.transforms.svdcdn.com/production/images/blog/import/WhatsApp-Image-2025-06-23-at-22.50.52.jpeg?w=1231&h=1145&q=100&auto=format&fit=crop&dm=1750949501&s=fe120a0db5c7acc0cd0c72601fb4ba89"
-                                alt=""
-                                className="w-full h-full object-cover"
-                              />
-                            </div>
-                          </div>
-                          <div>Ray Saddiq</div>
-                        </div>
-                        <div className="inline-flex items-center font-sans-primary font-medium tracking-tight leading-none rounded-full text-sm gap-x-2 px-3 py-1 min-h-7 xl:min-h-8 xl:py-1.5 xl:text-base text-gray-300 bg-white">
-                          <i
-                            className="fa-sharp fa-regular fa-stopwatch"
-                            aria-hidden="true"
-                          ></i>
-                          <div>2 mins</div>
-                        </div>
-                      </div>
-                      <h2 className="inline-flex flex-wrap text-balance relative text-left justify-start text-gray-900 text-2xl leading-none xl:text-3xl xl:leading-none font-sans-primary font-medium tracking-tight js-heading">
-                        Rise at Seven Exits Sheffield and Triples Manchester as
-                        new HQ as they go for global expansion
-                      </h2>
-                    </div>
-                  </a>
-                </div>
-
-                {/* Slide 3 */}
-                <div
-                  className="py-2 swiper-slide group"
-                  style={{ width: "821.333px", marginRight: "20px" }}
-                >
-                  <a
-                    href="https://riseatseven.com/blog/global-operations-director-promotion/"
-                    className="cursor-trigger w-full flex flex-col items-start gap-y-5 transition-transform duration-300 group-hover:-translate-y-2 circle-mask-container"
-                  >
-                    <div className="w-full grid">
-                      <div className="col-start-1 row-start-1 z-20 p-3">
-                        <div className="flex flex-wrap gap-1">
-                          <div className="inline-flex items-center font-sans-primary font-medium tracking-tight leading-none rounded-full text-sm gap-x-2 px-3 py-1 min-h-7 xl:min-h-8 xl:py-1.5 xl:text-base text-white bg-white/20 backdrop-blur-sm">
-                            <div>News</div>
                           </div>
                         </div>
+                        <div>{item.author}</div>
                       </div>
-                      <div className="col-start-1 row-start-1 z-10 relative rounded-2xl overflow-hidden aspect-square lg:rounded-3xl">
-                        <div className="w-full h-full transition-all duration-700 scale-120 circle-mask blur-0 group-hover:blur-md">
-                          <picture>
-                            <source
-                              type="image/webp"
-                              srcSet="https://rise-atseven.transforms.svdcdn.com/production/images/0B5A7827.jpg?w=400&h=400&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1777514348&s=69c3ee1d52b842d82374bc94dccd5e57 400w"
-                              sizes="100vw"
-                            />
-                            <img
-                              src="https://rise-atseven.transforms.svdcdn.com/production/images/0B5A7827.jpg?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1777514348&s=161c413ad12ef90895fad390f5521371"
-                              alt="0 B5 A7827"
-                              className="h-full w-full object-cover absolute top-0 left-0 transition-opacity"
-                              loading="lazy"
-                              style={{ opacity: 1 }}
-                            />
-                          </picture>
-                        </div>
-                      </div>
-                      <div className="col-start-1 row-start-1 aspect-square relative rounded-2xl overflow-hidden lg:rounded-3xl">
-                        <picture>
-                          <source
-                            type="image/webp"
-                            srcSet="https://rise-atseven.transforms.svdcdn.com/production/images/0B5A7827.jpg?w=400&h=400&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1777514348&s=69c3ee1d52b842d82374bc94dccd5e57 400w"
-                            sizes="100vw"
-                          />
-                          <img
-                            src="https://rise-atseven.transforms.svdcdn.com/production/images/0B5A7827.jpg?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1777514348&s=161c413ad12ef90895fad390f5521371"
-                            alt="0 B5 A7827"
-                            className="h-full w-full object-cover absolute top-0 left-0 transition-opacity"
-                            loading="lazy"
-                            style={{ opacity: 1 }}
-                          />
-                        </picture>
+                      <div className="inline-flex items-center font-sans-primary font-medium tracking-tight leading-none rounded-full text-sm gap-x-2 px-3 py-1 min-h-7 xl:min-h-8 xl:py-1.5 xl:text-base text-gray-900 bg-gray-100">
+                        <i className="fa-sharp fa-regular fa-stopwatch" aria-hidden="true"></i>
+                        <div>{item.readTime}</div>
                       </div>
                     </div>
-                    <div className="flex flex-col items-start gap-y-3">
-                      <div className="flex items-start gap-1 mt-1">
-                        <div className="inline-flex items-center font-sans-primary font-medium tracking-tight leading-none rounded-full text-sm gap-x-2 px-3 py-1 min-h-7 xl:min-h-8 xl:py-1.5 xl:text-base text-gray-300 bg-white">
-                          <div className="inline-flex items-center justify-center -ml-1.5">
-                            <div className="rounded-full overflow-hidden -mr-1 w-5 h-5">
-                              <img
-                                src="https://rise-atseven.transforms.svdcdn.com/production/images/blog/import/84b3917f166d7feb4c2376f78ce33ae432656999.jpg?w=1080&h=1080&q=100&auto=format&fit=crop&dm=1750847674&s=8bef9798a0d24a5970f561908d301967"
-                                alt=""
-                                className="w-full h-full object-cover"
-                              />
-                            </div>
-                          </div>
-                          <div>Carrie Rose</div>
-                        </div>
-                        <div className="inline-flex items-center font-sans-primary font-medium tracking-tight leading-none rounded-full text-sm gap-x-2 px-3 py-1 min-h-7 xl:min-h-8 xl:py-1.5 xl:text-base text-gray-300 bg-white">
-                          <i
-                            className="fa-sharp fa-regular fa-stopwatch"
-                            aria-hidden="true"
-                          ></i>
-                          <div>2 mins</div>
-                        </div>
-                      </div>
-                      <h2 className="inline-flex flex-wrap text-balance relative text-left justify-start text-gray-900 text-2xl leading-none xl:text-3xl xl:leading-none font-sans-primary font-medium tracking-tight js-heading">
-                        Ryan McNamara Is Now Rise at Seven's Global Operations
-                        Director
-                      </h2>
-                    </div>
-                  </a>
-                </div>
-              </div>
+                    <h2 className="inline-flex flex-wrap text-balance relative text-left justify-start text-gray-900 text-2xl leading-tight xl:text-3xl xl:leading-tight font-sans-primary font-medium tracking-tight">
+                      {item.title}
+                    </h2>
+                  </div>
+                </a>
+              ))}
             </div>
           </div>
 
@@ -526,10 +343,7 @@ const WhatsNewSection = () => {
                       className="inline-block align-middle transition-transform text-xs mt-1"
                       aria-hidden="true"
                     >
-                      <i
-                        className="fa-regular fa-sharp fa-arrow-up-right"
-                        aria-hidden="true"
-                      ></i>
+                      <i className="fa-regular fa-sharp fa-arrow-up-right" aria-hidden="true"></i>
                     </span>
                   </div>
                 </div>
@@ -540,10 +354,7 @@ const WhatsNewSection = () => {
                       className="inline-block align-middle transition-transform text-xs mt-1"
                       aria-hidden="true"
                     >
-                      <i
-                        className="fa-regular fa-sharp fa-arrow-up-right"
-                        aria-hidden="true"
-                      ></i>
+                      <i className="fa-regular fa-sharp fa-arrow-up-right" aria-hidden="true"></i>
                     </span>
                   </div>
                 </div>
