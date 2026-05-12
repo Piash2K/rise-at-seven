@@ -8,14 +8,46 @@ const links = [
     href: "https://riseatseven.com/services/",
     plus: true,
     items: [
-      { id: 4790, label: "Search & Growth Strategy", href: "https://riseatseven.com/services/strategy-growth/" },
-      { id: 11981, label: "Onsite SEO", href: "https://riseatseven.com/services/onsite-seo/" },
-      { id: 4789, label: "Content Experience", href: "https://riseatseven.com/services/content-experience/" },
-      { id: 22669, label: "B2B Marketing", href: "https://riseatseven.com/services/b2b-marketing/" },
-      { id: 12019, label: "Digital PR", href: "https://riseatseven.com/services/digital-pr/" },
-      { id: 12020, label: "Social Media & Campaigns", href: "https://riseatseven.com/services/social/" },
-      { id: 12021, label: "Data & Insights", href: "https://riseatseven.com/services/data-insights/" },
-      { id: 16559, label: "Social SEO/Search", href: "https://riseatseven.com/services/social-seo-tiktok-youtube/" },
+      {
+        id: 4790,
+        label: "Search & Growth Strategy",
+        href: "https://riseatseven.com/services/strategy-growth/",
+      },
+      {
+        id: 11981,
+        label: "Onsite SEO",
+        href: "https://riseatseven.com/services/onsite-seo/",
+      },
+      {
+        id: 4789,
+        label: "Content Experience",
+        href: "https://riseatseven.com/services/content-experience/",
+      },
+      {
+        id: 22669,
+        label: "B2B Marketing",
+        href: "https://riseatseven.com/services/b2b-marketing/",
+      },
+      {
+        id: 12019,
+        label: "Digital PR",
+        href: "https://riseatseven.com/services/digital-pr/",
+      },
+      {
+        id: 12020,
+        label: "Social Media & Campaigns",
+        href: "https://riseatseven.com/services/social/",
+      },
+      {
+        id: 12021,
+        label: "Data & Insights",
+        href: "https://riseatseven.com/services/data-insights/",
+      },
+      {
+        id: 16559,
+        label: "Social SEO/Search",
+        href: "https://riseatseven.com/services/social-seo-tiktok-youtube/",
+      },
     ],
   },
   {
@@ -23,7 +55,13 @@ const links = [
     label: "Industries",
     href: "https://riseatseven.com/services/b2b-marketing/",
     plus: true,
-    items: [{ id: 23931, label: "B2B Marketing", href: "https://riseatseven.com/services/b2b-marketing/" }],
+    items: [
+      {
+        id: 23931,
+        label: "B2B Marketing",
+        href: "https://riseatseven.com/services/b2b-marketing/",
+      },
+    ],
   },
   {
     id: 103,
@@ -31,10 +69,26 @@ const links = [
     href: "https://riseatseven.com/international/",
     plus: true,
     items: [
-      { id: 4762, label: "US Digital PR", href: "https://riseatseven.com/international/us-digital-pr/" },
-      { id: 23207, label: "Spain Digital PR", href: "https://riseatseven.com/international/us-digital-pr/spain-digital-pr/" },
-      { id: 23208, label: "Germany Digital PR", href: "https://riseatseven.com/germany-digital-pr/" },
-      { id: 23603, label: "Netherlands Digital PR", href: "https://riseatseven.com/netherlands-digital-pr/" },
+      {
+        id: 4762,
+        label: "US Digital PR",
+        href: "https://riseatseven.com/international/us-digital-pr/",
+      },
+      {
+        id: 23207,
+        label: "Spain Digital PR",
+        href: "https://riseatseven.com/international/us-digital-pr/spain-digital-pr/",
+      },
+      {
+        id: 23208,
+        label: "Germany Digital PR",
+        href: "https://riseatseven.com/germany-digital-pr/",
+      },
+      {
+        id: 23603,
+        label: "Netherlands Digital PR",
+        href: "https://riseatseven.com/netherlands-digital-pr/",
+      },
     ],
   },
   {
@@ -44,12 +98,25 @@ const links = [
     plus: true,
     items: [
       { id: 16915, label: "About Us", href: "https://riseatseven.com/about/" },
-      { id: 16916, label: "Meet The Risers", href: "https://riseatseven.com/meet-the-team/" },
+      {
+        id: 16916,
+        label: "Meet The Risers",
+        href: "https://riseatseven.com/meet-the-team/",
+      },
       { id: 16917, label: "Culture", href: "https://riseatseven.com/culture/" },
-      { id: 16918, label: "Testimonials", href: "https://riseatseven.com/testimonials/" },
+      {
+        id: 16918,
+        label: "Testimonials",
+        href: "https://riseatseven.com/testimonials/",
+      },
     ],
   },
-  { id: 104, label: "Work", href: "https://riseatseven.com/work/", badge: "25" },
+  {
+    id: 104,
+    label: "Work",
+    href: "https://riseatseven.com/work/",
+    badge: "25",
+  },
   { id: 105, label: "Careers", href: "https://riseatseven.com/careers/" },
   {
     id: 106,
@@ -58,8 +125,16 @@ const links = [
     plus: true,
     items: [
       { id: 24144, label: "Blog", href: "https://riseatseven.com/blog/" },
-      { id: 24145, label: "Category Leaderboard", href: "https://riseatseven.com/category-leaderboard/" },
-      { id: 24146, label: "Multi-Channel Search Report", href: "https://riseatseven.com/multi-channel-search-report-2026-/" },
+      {
+        id: 24145,
+        label: "Category Leaderboard",
+        href: "https://riseatseven.com/category-leaderboard/",
+      },
+      {
+        id: 24146,
+        label: "Multi-Channel Search Report",
+        href: "https://riseatseven.com/multi-channel-search-report-2026-/",
+      },
     ],
   },
   { id: 107, label: "Webinar", href: "https://riseatseven.com/webinars/" },
@@ -68,41 +143,63 @@ const links = [
 // Mega Menu Images (unchanged)
 const serviceImages = {
   4790: "https://rise-atseven.transforms.svdcdn.com/production/images/Screenshot-2025-06-23-at-23.14.49.png?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1750847626&s=a51fa90e59f4de7a51395aaed8e58428",
-  11981: "https://rise-atseven.transforms.svdcdn.com/production/images/WhatsApp-Image-2025-06-03-at-08.34.50.jpeg?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1766399268&s=7b53d90905d984816762e873a47f385d",
+  11981:
+    "https://rise-atseven.transforms.svdcdn.com/production/images/WhatsApp-Image-2025-06-03-at-08.34.50.jpeg?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1766399268&s=7b53d90905d984816762e873a47f385d",
   4789: "https://rise-atseven.transforms.svdcdn.com/production/images/Screenshot-2025-06-23-at-23.16.14.png?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1750847627&s=0eac1033a387c2e512f40f9edecda2a3",
-  22669: "https://rise-atseven.transforms.svdcdn.com/production/images/0B5A6875.jpg?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1774455015&s=df051a63ff34be86c30633107a8ae59a",
-  12019: "https://rise-atseven.transforms.svdcdn.com/production/images/Screenshot-2025-06-23-at-22.39.35.png?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1750847626&s=8c235c12e9ec64b43656efc0e9e378a1",
-  12020: "https://rise-atseven.transforms.svdcdn.com/production/images/temp_image_43CEDE6C-4430-479F-9DBF-B348FA9AC991.WEBP?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1750858840&s=7dfec3a2b398ef12b573b6eb019ea248",
-  12021: "https://rise-atseven.transforms.svdcdn.com/production/images/data.jpg?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1751376823&s=66a5710ec8714197799253183ec9457a",
-  16559: "https://rise-atseven.transforms.svdcdn.com/production/images/Screenshot-2025-09-24-at-11.47.25.png?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1758739812&s=0cc3aecb5a3a3d8c6b19c43cf1d5e5ed",
+  22669:
+    "https://rise-atseven.transforms.svdcdn.com/production/images/0B5A6875.jpg?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1774455015&s=df051a63ff34be86c30633107a8ae59a",
+  12019:
+    "https://rise-atseven.transforms.svdcdn.com/production/images/Screenshot-2025-06-23-at-22.39.35.png?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1750847626&s=8c235c12e9ec64b43656efc0e9e378a1",
+  12020:
+    "https://rise-atseven.transforms.svdcdn.com/production/images/temp_image_43CEDE6C-4430-479F-9DBF-B348FA9AC991.WEBP?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1750858840&s=7dfec3a2b398ef12b573b6eb019ea248",
+  12021:
+    "https://rise-atseven.transforms.svdcdn.com/production/images/data.jpg?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1751376823&s=66a5710ec8714197799253183ec9457a",
+  16559:
+    "https://rise-atseven.transforms.svdcdn.com/production/images/Screenshot-2025-09-24-at-11.47.25.png?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1758739812&s=0cc3aecb5a3a3d8c6b19c43cf1d5e5ed",
 };
 
 const industriesImages = {
-  23931: "https://rise-atseven.transforms.svdcdn.com/production/images/0B5A6875.jpg?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1774455015&s=df051a63ff34be86c30633107a8ae59a",
+  23931:
+    "https://rise-atseven.transforms.svdcdn.com/production/images/0B5A6875.jpg?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1774455015&s=df051a63ff34be86c30633107a8ae59a",
 };
 
 const internationalImages = {
   4762: "https://rise-atseven.transforms.svdcdn.com/production/images/d4df0d30-d590-4e94-9056-9491f4beacba.JPG?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1750847714&s=9b6e0a98f94b563a89840f3250cd1656",
-  23207: "https://rise-atseven.transforms.svdcdn.com/production/images/Logos_2026-04-23-101020_frxy.jpg?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1776939020&s=34b9c756d414c9d5fe741610b6586270",
-  23208: "https://rise-atseven.transforms.svdcdn.com/production/images/27.jpg?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1776937869&s=a63e93c2b6125756595bcd4261110e3e",
-  23603: "https://rise-atseven.transforms.svdcdn.com/production/images/Logos_2026-04-23-095313_xfhk.jpg?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1776937993&s=7ec4824e91e732244781774bbd2a5506",
+  23207:
+    "https://rise-atseven.transforms.svdcdn.com/production/images/Logos_2026-04-23-101020_frxy.jpg?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1776939020&s=34b9c756d414c9d5fe741610b6586270",
+  23208:
+    "https://rise-atseven.transforms.svdcdn.com/production/images/27.jpg?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1776937869&s=a63e93c2b6125756595bcd4261110e3e",
+  23603:
+    "https://rise-atseven.transforms.svdcdn.com/production/images/Logos_2026-04-23-095313_xfhk.jpg?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1776937993&s=7ec4824e91e732244781774bbd2a5506",
 };
 
 const aboutImages = {
-  16915: "https://rise-atseven.transforms.svdcdn.com/production/images/0B5A7487.jpg?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1751838846&s=ea95f9b1f06ee4da75582cc8d2b9060c",
-  16916: "https://rise-atseven.transforms.svdcdn.com/production/images/Screenshot-2025-06-23-at-23.14.49.png?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1750847626&s=a51fa90e59f4de7a51395aaed8e58428",
-  16917: "https://rise-atseven.transforms.svdcdn.com/production/images/IMG_4280-2.jpg?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1750846538&s=21ccf01b7608f94ccc3007f71a8081ec",
-  16918: "https://rise-atseven.transforms.svdcdn.com/production/images/d4df0d30-d590-4e94-9056-9491f4beacba.JPG?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1750847714&s=9b6e0a98f94b563a89840f3250cd1656",
+  16915:
+    "https://rise-atseven.transforms.svdcdn.com/production/images/0B5A7487.jpg?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1751838846&s=ea95f9b1f06ee4da75582cc8d2b9060c",
+  16916:
+    "https://rise-atseven.transforms.svdcdn.com/production/images/Screenshot-2025-06-23-at-23.14.49.png?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1750847626&s=a51fa90e59f4de7a51395aaed8e58428",
+  16917:
+    "https://rise-atseven.transforms.svdcdn.com/production/images/IMG_4280-2.jpg?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1750846538&s=21ccf01b7608f94ccc3007f71a8081ec",
+  16918:
+    "https://rise-atseven.transforms.svdcdn.com/production/images/d4df0d30-d590-4e94-9056-9491f4beacba.JPG?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1750847714&s=9b6e0a98f94b563a89840f3250cd1656",
 };
 
 const blogImages = {
-  24144: "https://rise-atseven.transforms.svdcdn.com/production/images/987a2051e11c80faa2a669c0eb61c514c7cc2314.png?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1750846498&s=9486511bfbd4d41fbb880cdff23322eb",
-  24145: "https://rise-atseven.transforms.svdcdn.com/production/images/RA7-CL-VERSION-1-3-1_2026-05-05-132743_kfxk.png?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1777987663&s=77133958a3f81720da736a6356a32b55",
-  24146: "https://rise-atseven.transforms.svdcdn.com/production/images/homepage-image.jpg?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.4856&fp-y=0.5205&dm=1762943735&s=691f0bc8b24b3bf4319db013b52132d5",
+  24144:
+    "https://rise-atseven.transforms.svdcdn.com/production/images/987a2051e11c80faa2a669c0eb61c514c7cc2314.png?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1750846498&s=9486511bfbd4d41fbb880cdff23322eb",
+  24145:
+    "https://rise-atseven.transforms.svdcdn.com/production/images/RA7-CL-VERSION-1-3-1_2026-05-05-132743_kfxk.png?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1777987663&s=77133958a3f81720da736a6356a32b55",
+  24146:
+    "https://rise-atseven.transforms.svdcdn.com/production/images/homepage-image.jpg?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.4856&fp-y=0.5205&dm=1762943735&s=691f0bc8b24b3bf4319db013b52132d5",
 };
 
 const Logo = () => (
-  <svg className="h-auto w-full fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 21" aria-hidden="true">
+  <svg
+    className="h-auto w-full fill-current"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 168 21"
+    aria-hidden="true"
+  >
     <path d="M91.3152 5.40061C91.3152 3.94241 92.5306 2.67359 93.9881 2.67359C95.7162 2.67359 96.797 3.83419 96.797 5.56225H99.7127C99.7127 2.1873 97.3096 0 93.9874 0C90.9371 0 88.3988 2.32257 88.3988 5.42766C88.3988 9.31596 90.883 10.2344 93.9874 11.4221C95.6627 12.07 97.2007 12.5563 97.2007 14.6895C97.2007 16.634 95.9867 18.0651 93.9874 18.0651C91.8813 18.0651 90.7477 16.3905 90.7477 14.446H87.832C87.832 18.0651 90.3426 20.7381 93.9874 20.7381C97.6323 20.7381 100.118 18.2816 100.118 14.6895C100.118 7.10161 91.3145 9.64061 91.3145 5.40061H91.3152Z" />
     <path d="M109.209 4.99609C104.834 4.99609 101.539 8.53405 101.539 12.8539C101.539 17.1737 104.888 20.738 109.155 20.738C112.422 20.738 115.203 18.713 116.337 15.662H113.529C112.718 17.2278 111.017 18.1733 109.262 18.1733C106.806 18.1733 104.915 16.4182 104.348 14.0963H116.743C116.797 13.6371 116.823 13.1508 116.823 12.6922C116.823 8.47926 113.447 4.99609 109.209 4.99609ZM104.348 11.9361C104.509 9.47823 106.751 7.56147 109.181 7.56147C111.611 7.56147 113.853 9.47823 114.014 11.9361H104.348Z" />
     <path d="M127.476 5.40039L123.575 16.0941L119.673 5.40039H116.676L122.617 20.3598H124.588L130.475 5.40039H127.476Z" />
@@ -121,33 +218,52 @@ const Logo = () => (
 );
 
 // Mega Menu Component
-const MegaMenu = ({ menu, activeSubmenu, setActiveSubmenu, isOpen, images }) => {
+const MegaMenu = ({
+  menu,
+  activeSubmenu,
+  setActiveSubmenu,
+  isOpen,
+  images,
+}) => {
   const menuRef = useRef(null);
-  const isSingleColumnMenu = menu.id === 23929 || menu.id === 103 || menu.id === 16913 || menu.id === 106;
-  const cardWidthClass = menu.id === 102 ? "w-5xl" : menu.id === 23929 ? "w-3xl" : "w-4xl";
+  const isSingleColumnMenu =
+    menu.id === 23929 ||
+    menu.id === 103 ||
+    menu.id === 16913 ||
+    menu.id === 106;
+  const cardWidthClass =
+    menu.id === 102 ? "w-5xl" : menu.id === 23929 ? "w-3xl" : "w-4xl";
   const imageWidthClass = menu.id === 102 ? "w-96" : "w-80";
 
   useEffect(() => {
     if (menuRef.current) {
       if (isOpen) {
-        menuRef.current.style.display = 'flex';
-        gsap.fromTo(menuRef.current,
+        menuRef.current.style.display = "flex";
+        gsap.fromTo(
+          menuRef.current,
           { opacity: 0, scaleX: 0.95, scaleY: 0.95 },
-          { opacity: 1, scaleX: 1, scaleY: 1, duration: 0.3, ease: "power2.out" }
+          {
+            opacity: 1,
+            scaleX: 1,
+            scaleY: 1,
+            duration: 0.3,
+            ease: "power2.out",
+          },
         );
       } else {
         gsap.to(menuRef.current, {
           opacity: 0,
           duration: 0.2,
           onComplete: () => {
-            if (menuRef.current) menuRef.current.style.display = 'none';
-          }
+            if (menuRef.current) menuRef.current.style.display = "none";
+          },
         });
       }
     }
   }, [isOpen]);
 
-  const firstHalf = menu.items?.slice(0, Math.ceil(menu.items.length / 2)) || [];
+  const firstHalf =
+    menu.items?.slice(0, Math.ceil(menu.items.length / 2)) || [];
   const secondHalf = menu.items?.slice(Math.ceil(menu.items.length / 2)) || [];
 
   return (
@@ -155,15 +271,23 @@ const MegaMenu = ({ menu, activeSubmenu, setActiveSubmenu, isOpen, images }) => 
       ref={menuRef}
       className="shrink-0 absolute z-20 left-1/2 -translate-x-1/2 translate-y-full pt-1 hidden pointer-events-auto bottom-0"
       data-menu-id={menu.id}
-      style={{ opacity: 0, display: 'none' }}
+      style={{ opacity: 0, display: "none" }}
     >
-      <div className={`bg-white rounded-3xl flex shrink-0 shadow-2xl ${cardWidthClass}`}>
+      <div
+        className={`bg-white rounded-3xl flex shrink-0 shadow-2xl ${cardWidthClass}`}
+      >
         <div className="flex-1 inline-flex items-center justify-center px-8 py-6">
-          <div className={isSingleColumnMenu ? "flex min-w-75 flex-col gap-y-4" : "flex gap-x-8"}>
+          <div
+            className={
+              isSingleColumnMenu
+                ? "flex min-w-75 flex-col gap-y-4"
+                : "flex gap-x-8"
+            }
+          >
             {isSingleColumnMenu ? (
               <div className="w-full">
                 <ul className="flex flex-col gap-y-1">
-                  {menu.items?.map(item => (
+                  {menu.items?.map((item) => (
                     <li key={item.id}>
                       <a
                         href={item.href}
@@ -171,8 +295,12 @@ const MegaMenu = ({ menu, activeSubmenu, setActiveSubmenu, isOpen, images }) => 
                         onMouseEnter={() => setActiveSubmenu(item.id)}
                       >
                         <div className="relative overflow-hidden py-0.5">
-                          <div className="transition-transform duration-300 group-hover:-translate-y-full">{item.label}</div>
-                          <div className="absolute top-0 left-0 translate-y-full transition-transform duration-300 group-hover:translate-y-0">{item.label}</div>
+                          <div className="transition-transform duration-300 group-hover:-translate-y-full">
+                            {item.label}
+                          </div>
+                          <div className="absolute top-0 left-0 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+                            {item.label}
+                          </div>
                         </div>
                       </a>
                     </li>
@@ -184,7 +312,7 @@ const MegaMenu = ({ menu, activeSubmenu, setActiveSubmenu, isOpen, images }) => 
                 {firstHalf.length > 0 && (
                   <div className="flex-1">
                     <ul className="flex flex-col gap-y-1">
-                      {firstHalf.map(item => (
+                      {firstHalf.map((item) => (
                         <li key={item.id}>
                           <a
                             href={item.href}
@@ -192,8 +320,12 @@ const MegaMenu = ({ menu, activeSubmenu, setActiveSubmenu, isOpen, images }) => 
                             onMouseEnter={() => setActiveSubmenu(item.id)}
                           >
                             <div className="relative overflow-hidden py-0.5">
-                              <div className="transition-transform duration-300 group-hover:-translate-y-full">{item.label}</div>
-                              <div className="absolute top-0 left-0 translate-y-full transition-transform duration-300 group-hover:translate-y-0">{item.label}</div>
+                              <div className="transition-transform duration-300 group-hover:-translate-y-full">
+                                {item.label}
+                              </div>
+                              <div className="absolute top-0 left-0 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+                                {item.label}
+                              </div>
                             </div>
                           </a>
                         </li>
@@ -204,7 +336,7 @@ const MegaMenu = ({ menu, activeSubmenu, setActiveSubmenu, isOpen, images }) => 
                 {secondHalf.length > 0 && (
                   <div className="flex-1">
                     <ul className="flex flex-col gap-y-1">
-                      {secondHalf.map(item => (
+                      {secondHalf.map((item) => (
                         <li key={item.id}>
                           <a
                             href={item.href}
@@ -212,8 +344,12 @@ const MegaMenu = ({ menu, activeSubmenu, setActiveSubmenu, isOpen, images }) => 
                             onMouseEnter={() => setActiveSubmenu(item.id)}
                           >
                             <div className="relative overflow-hidden py-0.5">
-                              <div className="transition-transform duration-300 group-hover:-translate-y-full">{item.label}</div>
-                              <div className="absolute top-0 left-0 translate-y-full transition-transform duration-300 group-hover:translate-y-0">{item.label}</div>
+                              <div className="transition-transform duration-300 group-hover:-translate-y-full">
+                                {item.label}
+                              </div>
+                              <div className="absolute top-0 left-0 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+                                {item.label}
+                              </div>
                             </div>
                           </a>
                         </li>
@@ -228,18 +364,25 @@ const MegaMenu = ({ menu, activeSubmenu, setActiveSubmenu, isOpen, images }) => 
         <div className={`shrink-0 relative p-2 ${imageWidthClass}`}>
           {menu.id === 102 && (
             <div className="absolute bottom-0 left-0 w-full z-20 p-5">
-              <a href={menu.href} className="w-full group inline-flex shrink-0 justify-center gap-x-2 items-center relative leading-tight tracking-tightish font-medium overflow-hidden border border-transparent cursor-pointer focus:outline-none md:w-auto text-base px-6 py-3 rounded-3xl transition-all duration-300 hover:rounded-xl bg-black text-white flex-row-reverse">
+              <a
+                href={menu.href}
+                className="w-full group inline-flex shrink-0 justify-center gap-x-2 items-center relative leading-tight tracking-tightish font-medium overflow-hidden border border-transparent cursor-pointer focus:outline-none md:w-auto text-base px-6 py-3 rounded-3xl transition-all duration-300 hover:rounded-xl bg-black text-white flex-row-reverse"
+              >
                 <div className="relative overflow-hidden">
                   <div className="transition-all duration-300 group-hover:-translate-y-6">
                     <div className="flex items-center gap-x-2">
                       <span>View all services</span>
-                      <span className="inline-block align-middle text-xs mt-1">↗</span>
+                      <span className="inline-block align-middle text-xs mt-1">
+                        ↗
+                      </span>
                     </div>
                   </div>
                   <div className="transition-all duration-300 absolute top-0 left-0 translate-y-6 group-hover:translate-y-0">
                     <div className="flex items-center gap-x-2">
                       <span>View all services</span>
-                      <span className="inline-block align-middle text-xs mt-1">↗</span>
+                      <span className="inline-block align-middle text-xs mt-1">
+                        ↗
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -248,10 +391,10 @@ const MegaMenu = ({ menu, activeSubmenu, setActiveSubmenu, isOpen, images }) => 
           )}
           <div className="relative rounded-2xl overflow-hidden bg-gray-900 aspect-square w-full shrink-0">
             <div className="w-full h-full relative">
-              {menu.items?.map(item => (
+              {menu.items?.map((item) => (
                 <div
                   key={item.id}
-                  className={`absolute top-0 left-0 w-full h-full transition-all duration-500 ${activeSubmenu === item.id ? 'opacity-100 scale-100' : 'opacity-0 scale-105 blur-md'}`}
+                  className={`absolute top-0 left-0 w-full h-full transition-all duration-500 ${activeSubmenu === item.id ? "opacity-100 scale-100" : "opacity-0 scale-105 blur-md"}`}
                 >
                   <img
                     src={images[item.id]}
@@ -283,22 +426,22 @@ export default function Navbar() {
 
   const updateHoverBackground = (element) => {
     if (!element || !navRef.current) return;
-    
+
     const targetRect = element.getBoundingClientRect();
     const navRect = navRef.current.getBoundingClientRect();
-    
-    const hoverBg = document.querySelector('.nav-hover-bg');
+
+    const hoverBg = document.querySelector(".nav-hover-bg");
     if (hoverBg) {
-      hoverBg.style.width = targetRect.width + 'px';
-      hoverBg.style.left = (targetRect.left - navRect.left) + 'px';
-      hoverBg.style.opacity = '1';
+      hoverBg.style.width = targetRect.width + "px";
+      hoverBg.style.left = targetRect.left - navRect.left + "px";
+      hoverBg.style.opacity = "1";
     }
   };
 
   const resetHoverBackground = () => {
-    const hoverBg = document.querySelector('.nav-hover-bg');
+    const hoverBg = document.querySelector(".nav-hover-bg");
     if (hoverBg) {
-      hoverBg.style.opacity = '0';
+      hoverBg.style.opacity = "0";
     }
   };
 
@@ -307,13 +450,13 @@ export default function Navbar() {
       clearTimeout(hoverTimeout);
       setHoverTimeout(null);
     }
-    
+
     const target = event.currentTarget;
     setHoveredElement(target);
     updateHoverBackground(target);
-    const menu = links.find(l => l.id === menuId);
+    const menu = links.find((l) => l.id === menuId);
     setActiveMega(menu?.items?.length ? menuId : null);
-    
+
     // Reset active submenu for the new menu
     if (menu?.items?.[0]) {
       setActiveSubmenu(menu.items[0].id);
@@ -349,9 +492,9 @@ export default function Navbar() {
         updateHoverBackground(hoveredElement);
       }
     };
-    
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, [hoveredElement, activeMega]);
 
   useEffect(() => {
@@ -361,18 +504,18 @@ export default function Navbar() {
       const hasScrolled = currentScrollY > 24;
 
       setScrolled(hasScrolled);
-      
+
       setHideHeader(scrollingDown && currentScrollY > 100 && !mobileMenu);
-      
+
       if (currentScrollY <= 40) {
         setHideHeader(false);
       }
-      
+
       if (activeMega) {
         setActiveMega(null);
         resetHoverBackground();
       }
-      
+
       setLastScrollY(currentScrollY);
     };
 
@@ -394,11 +537,16 @@ export default function Navbar() {
   }, [lastScrollY, mobileMenu, activeMega]);
 
   useEffect(() => {
-    document.body.classList.toggle("overflow-hidden", mobileMenu || !!activeMega);
+    document.body.classList.toggle(
+      "overflow-hidden",
+      mobileMenu || !!activeMega,
+    );
     return () => document.body.classList.remove("overflow-hidden");
   }, [mobileMenu, activeMega]);
 
-  const megaMenus = links.filter((link) => Array.isArray(link.items) && link.items.length > 0);
+  const megaMenus = links.filter(
+    (link) => Array.isArray(link.items) && link.items.length > 0,
+  );
 
   const getImagesForMenu = (menuId) => {
     if (menuId === 102) return serviceImages;
@@ -412,9 +560,11 @@ export default function Navbar() {
   return (
     <>
       {/* Backdrop overlay */}
-      <div 
+      <div
         className={`fixed inset-0 z-40 transition-all duration-400 ${
-          activeMega ? "pointer-events-auto backdrop-blur-lg bg-black/20" : "pointer-events-none"
+          activeMega
+            ? "pointer-events-auto backdrop-blur-lg bg-black/20"
+            : "pointer-events-none"
         }`}
         onClick={() => {
           setActiveMega(null);
@@ -423,15 +573,23 @@ export default function Navbar() {
         aria-hidden="true"
       />
 
-      <header className={`fixed left-0 right-0 top-0 z-50 transition-transform duration-700 ${hideHeader ? "-translate-y-full" : "translate-y-0"}`}>
+      <header
+        className={`fixed left-0 right-0 top-0 z-50 transition-transform duration-700 ${hideHeader ? "-translate-y-full" : "translate-y-0"}`}
+      >
         <div className="w-full px-2 pt-2 md:px-3 md:pt-3">
-          <div className={`relative flex h-16 w-full items-center rounded-full px-2 transition-all duration-500 md:h-18 md:px-3 ${
-            scrolled || mobileMenu
-              ? "bg-white/55 shadow-[0_10px_30px_rgba(17,24,39,0.06)] backdrop-blur-xl"
-              : "bg-transparent shadow-none"
-          }`}>
+          <div
+            className={`relative flex h-16 w-full items-center rounded-full px-2 transition-all duration-500 md:h-18 md:px-3 ${
+              scrolled || mobileMenu
+                ? "bg-white/55 shadow-[0_10px_30px_rgba(17,24,39,0.06)] backdrop-blur-xl"
+                : "bg-transparent shadow-none"
+            }`}
+          >
             {/* Logo - Left */}
-            <a href="/" className={`block w-40 shrink-0 transition-colors duration-300 ${scrolled || mobileMenu ? "text-black" : "text-white"}`} aria-label="Rise at Seven home">
+            <a
+              href="/"
+              className={`block w-40 shrink-0 transition-colors duration-300 ${scrolled || mobileMenu ? "text-black" : "text-white"}`}
+              aria-label="Rise at Seven home"
+            >
               <Logo />
             </a>
 
@@ -443,19 +601,23 @@ export default function Navbar() {
               onMouseLeave={handleNavMouseLeave}
             >
               {/* Hover background - smaller height */}
-              <div 
+              <div
                 className="nav-hover-bg absolute rounded-full h-9 top-1/2 -translate-y-1/2 bg-[#f4f5f7] transition-all duration-300 pointer-events-none"
                 style={{ opacity: 0, width: 0, left: 0 }}
               />
-              
+
               {links.map((link) => (
                 <a
                   key={link.id}
                   href={link.href}
                   className={`relative inline-flex items-center gap-0.5 rounded-full px-4 py-1.5 transition-colors duration-300 z-10 ${
                     scrolled || mobileMenu
-                      ? activeMega === link.id ? "text-black" : "text-[#1e1e1e] hover:text-black"
-                      : activeMega === link.id ? "text-black" : "text-white hover:text-black"
+                      ? activeMega === link.id
+                        ? "text-black"
+                        : "text-[#1e1e1e] hover:text-black"
+                      : activeMega === link.id
+                        ? "text-black"
+                        : "text-white hover:text-black"
                   }`}
                   onMouseEnter={(e) => handleNavMouseEnter(link.id, e)}
                 >
@@ -473,16 +635,63 @@ export default function Navbar() {
             {/* Get in touch button - Right */}
             <a
               href="https://riseatseven.com/connect-with-us/"
-              className={`ml-auto shrink-0 hidden min-h-11 min-w-38.5 items-center justify-center gap-2 rounded-full text-[15px] font-bold tracking-[-0.35px] transition-colors duration-300 hover:opacity-90 xl:inline-flex ${
+              className={`group ml-auto shrink-0 hidden min-h-11 min-w-38.5 items-center justify-center gap-2 rounded-full transition transition-rounded text-[15px] font-bold tracking-[-0.35px] pointer-fine:hover:rounded-xl xl:inline-flex ${
                 scrolled || mobileMenu
                   ? "bg-[#1e1e1e] text-white"
                   : "bg-white text-black"
               }`}
             >
-              Get in touch
-              <span className="font-light">↗</span>
+              <div className="relative overflow-hidden">
+                <div className="transition-transform duration-300 group-hover:-translate-y-6">
+                  <div className="flex items-center gap-2">
+                    <span>Get in touch</span>
+                    <span
+                      className="inline-block align-middle motion-safe:transition text-xs mt-1"
+                      aria-hidden="true"
+                    >
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M7 17L17 7M17 7H7M17 7V17"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+                <div className="transition-transform duration-300 absolute top-0 left-0 translate-y-6 group-hover:translate-y-0">
+                  <div className="flex items-center gap-2">
+                    <span>Get in touch</span>
+                    <span
+                      className="inline-block align-middle motion-safe:transition text-xs mt-1"
+                      aria-hidden="true"
+                    >
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M7 17L17 7M17 7H7M17 7V17"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
             </a>
-
             {/* Mobile menu button */}
             <button
               type="button"
@@ -501,7 +710,10 @@ export default function Navbar() {
         </div>
 
         {/* Mega Menus */}
-        <div onMouseEnter={handleMegaMenuMouseEnter} onMouseLeave={handleMegaMenuMouseLeave}>
+        <div
+          onMouseEnter={handleMegaMenuMouseEnter}
+          onMouseLeave={handleMegaMenuMouseLeave}
+        >
           {megaMenus.map((menu) => (
             <MegaMenu
               key={menu.id}
@@ -516,32 +728,61 @@ export default function Navbar() {
       </header>
 
       {/* Mobile Menu */}
-      <div className={`fixed inset-0 z-60 bg-black/30 p-2 pt-3 backdrop-blur-sm transition duration-500 xl:hidden ${
-        mobileMenu ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
-      }`}>
+      <div
+        className={`fixed inset-0 z-60 bg-black/30 p-2 pt-3 backdrop-blur-sm transition duration-500 xl:hidden ${
+          mobileMenu
+            ? "pointer-events-auto opacity-100"
+            : "pointer-events-none opacity-0"
+        }`}
+      >
         <div className="mx-auto max-h-[95svh] w-full max-w-xl overflow-auto rounded-[28px] bg-[#1f1f1f] p-6 text-white">
           <div className="mb-6 flex items-center justify-between">
             <a href="/" className="block w-36" aria-label="Rise at Seven home">
               <Logo />
             </a>
-            <button type="button" onClick={() => setMobileMenu(false)} aria-label="Close menu" className="text-2xl leading-none text-white">×</button>
+            <button
+              type="button"
+              onClick={() => setMobileMenu(false)}
+              aria-label="Close menu"
+              className="text-2xl leading-none text-white"
+            >
+              ×
+            </button>
           </div>
 
-          <nav className="grid gap-4 text-lg font-semibold tracking-[-0.3px]" aria-label="Mobile navigation">
+          <nav
+            className="grid gap-4 text-lg font-semibold tracking-[-0.3px]"
+            aria-label="Mobile navigation"
+          >
             {links.map((link) => (
               <div key={link.id} className="border-b border-white/20 pb-3">
                 {link.items ? (
                   <button
                     type="button"
                     className="flex w-full items-center justify-between text-left"
-                    onClick={() => setExpandedMobile((open) => (open === link.id ? null : link.id))}
+                    onClick={() =>
+                      setExpandedMobile((open) =>
+                        open === link.id ? null : link.id,
+                      )
+                    }
                   >
-                    <span>{link.label}{link.badge ? ` (${link.badge})` : ""}</span>
-                    <span className="text-xl">{expandedMobile === link.id ? "−" : "+"}</span>
+                    <span>
+                      {link.label}
+                      {link.badge ? ` (${link.badge})` : ""}
+                    </span>
+                    <span className="text-xl">
+                      {expandedMobile === link.id ? "−" : "+"}
+                    </span>
                   </button>
                 ) : (
-                  <a href={link.href} className="flex w-full items-center justify-between text-left">
-                    <span>{link.label}{link.badge ? ` (${link.badge})` : ""}</span>
+                  <a
+                    href={link.href}
+                    className="flex w-full items-center justify-between text-left"
+                  >
+                    <span>
+                      {link.label}
+                      {link.badge ? ` (${link.badge})` : ""}
+                    </span>
                   </a>
                 )}
 
@@ -549,7 +790,12 @@ export default function Navbar() {
                   <ul className="mt-3 grid gap-2 text-sm font-medium text-white/80">
                     {link.items.map((item) => (
                       <li key={item.id}>
-                        <a href={item.href} className="hover:text-white transition-colors">{item.label}</a>
+                        <a
+                          href={item.href}
+                          className="hover:text-white transition-colors"
+                        >
+                          {item.label}
+                        </a>
                       </li>
                     ))}
                   </ul>
@@ -558,7 +804,10 @@ export default function Navbar() {
             ))}
           </nav>
 
-          <a href="https://riseatseven.com/connect-with-us/" className="mt-6 inline-flex min-h-11 min-w-38.5 items-center justify-center gap-2 rounded-full bg-white px-5 text-[15px] font-bold tracking-[-0.35px] text-[#1e1e1e] hover:opacity-90">
+          <a
+            href="https://riseatseven.com/connect-with-us/"
+            className="mt-6 inline-flex min-h-11 min-w-38.5 items-center justify-center gap-2 rounded-full bg-white px-5 text-[15px] font-bold tracking-[-0.35px] text-[#1e1e1e] hover:opacity-90"
+          >
             Get in touch
             <span className="font-light">↗</span>
           </a>

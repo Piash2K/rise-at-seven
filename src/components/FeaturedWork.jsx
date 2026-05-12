@@ -206,9 +206,7 @@ function FeaturedWork() {
           rightViewport.clientHeight -
             (parseFloat(window.getComputedStyle(rightViewport).paddingTop) ||
               0) -
-            (parseFloat(
-              window.getComputedStyle(rightViewport).paddingBottom,
-            ) ||
+            (parseFloat(window.getComputedStyle(rightViewport).paddingBottom) ||
               0),
           0,
         ),
@@ -243,7 +241,6 @@ function FeaturedWork() {
 
       timeline.to(leftList, { y: -leftShift * 3.85, ease: "none" }, 0);
       timeline.to(rightList, { y: -rightShift, ease: "none" }, 0);
-
     }, sectionRef);
 
     return () => ctx.revert();
@@ -323,7 +320,9 @@ function FeaturedWork() {
                             >
                               <Heading
                                 className={`font-sans-primary font-medium text-6xl/none lg:text-8xl/none xl:text-8xl/0.9 3xl:text-8xl/0.9 4xl:text-9xl/0.9 js-heading transition-all duration-700 ${
-                                  isActive ? "tracking-[-0.04em]" : "tracking-tight"
+                                  isActive
+                                    ? "tracking-[-0.04em]"
+                                    : "tracking-tight"
                                 }`}
                                 style={{
                                   color: isActive
@@ -366,100 +365,49 @@ function FeaturedWork() {
                   className="relative h-full lg:h-[96svh] pt-7 pb-7 pr-5"
                 >
                   <div ref={rightListRef} className="relative">
-                  {workItems.map((item, index) => {
-                    const isActive = activeId === item.id;
-                    const shouldReveal = hoveredId === item.id;
+                    {workItems.map((item, index) => {
+                      const isActive = activeId === item.id;
+                      const shouldReveal = hoveredId === item.id;
 
-                    return (
-                      <a
-                        key={item.id}
-                        href={item.href}
-                        className={`cursor-trigger grid group overflow-hidden rounded-3xl mb-5 lg:mb-7 circle-mask-container ${isActive ? "is-active" : ""}`}
-                        style={{
-                          zIndex: isActive ? 999 : workItems.length - index,
-                        }}
-                        onMouseEnter={() => setHoveredId(item.id)}
-                        onMouseLeave={() => setHoveredId(null)}
-                      >
-                        <div className="col-start-1 row-start-1">
-                          <div
-                            className="relative overflow-hidden w-full"
-                            style={{ paddingTop: "75%" }}
-                          >
-                            <picture className="absolute top-0 left-0 w-full h-full">
-                              <source
-                                type="image/webp"
-                                srcSet={item.imgSet}
-                                sizes="100vw"
-                              />
-                              <img
-                                src={item.imgSrc}
-                                srcSet={item.imgSet}
-                                sizes="100vw"
-                                alt={item.title.replace(/\s/g, "")}
-                                className="h-full w-full object-cover"
-                                loading="lazy"
-                                style={{ opacity: isActive ? 1 : 0.85 }}
-                              />
-                            </picture>
-                          </div>
-                        </div>
-
-                        <div className="col-start-1 row-start-1 p-3 z-20 flex justify-end items-start lg:items-end lg:p-5">
-                          {item.category ? (
-                            <div
-                              className="shrink-0 inline-flex items-center rounded-full tracking-tight font-medium leading-none text-white bg-white/20 backdrop-blur-sm text-sm gap-x-3 py-2.5 px-3.5 lg:text-base"
-                              style={{ backdropFilter: "blur(8px)" }}
-                            >
-                              <i
-                                className="fa-regular fa-sharp fa-magnifying-glass"
-                                aria-hidden="true"
-                              ></i>
-                              <div>{item.category}</div>
-                              <i
-                                className={`fa-regular fa-sharp ${item.icon}`}
-                                aria-hidden="true"
-                              ></i>
-                            </div>
-                          ) : null}
-                        </div>
-
-                        <div className="col-start-1 row-start-1 p-3 z-20 relative flex justify-start items-end lg:hidden lg:p-5">
-                          <div className="grid gap-y-1 relative z-20">
-                            <div className="text-white/70 text-xs font-medium mt-2">
-                              {item.date}
-                            </div>
-                            <Heading className="text-white text-3xl/none lg:text-5xl/none xl:text-6xl/none 3xl:text-7xl/0.9 font-sans-primary font-medium tracking-tight js-heading">
-                              {item.title}
-                            </Heading>
-                          </div>
-                          <div className="absolute w-full bottom-0 left-0 h-32 bg-linear-to-t from-black/90 via-black/40 to-transparent z-10 pointer-events-none" />
-                        </div>
-
-                        <div
-                          className={`col-start-1 row-start-1 grid-cols-12 flex flex-col items-start justify-between z-30 p-3 lg:p-5 circle-mask ${
-                            shouldReveal
-                              ? "active opacity-100"
-                              : "opacity-0 pointer-events-none"
-                          }`}
+                      return (
+                        <a
+                          key={item.id}
+                          href={item.href}
+                          className={`cursor-trigger grid group overflow-hidden rounded-3xl mb-5 lg:mb-7 circle-mask-container ${isActive ? "is-active" : ""}`}
                           style={{
-                            backgroundColor: item.colour,
-                            color: "#111212",
-                            clipPath: shouldReveal
-                              ? "circle(140% at 50% 100%)"
-                              : "circle(0% at 50% 100%)",
-                            transition:
-                              "clip-path 0.8s cubic-bezier(0.22,1,0.36,1), opacity 0.5s ease",
+                            zIndex: isActive ? 999 : workItems.length - index,
                           }}
+                          onMouseEnter={() => setHoveredId(item.id)}
+                          onMouseLeave={() => setHoveredId(null)}
                         >
-                          <Heading className="text-current text-3xl/none lg:text-4xl/none xl:text-5xl/none 3xl:text-6xl/none font-sans-primary font-medium tracking-tight js-heading">
-                            {item.subtitle}
-                          </Heading>
-                          <div className="w-full flex items-end justify-between">
-                            <div className="w-8 lg:w-24" />
+                          <div className="col-start-1 row-start-1">
+                            <div
+                              className="relative overflow-hidden w-full"
+                              style={{ paddingTop: "75%" }}
+                            >
+                              <picture className="absolute top-0 left-0 w-full h-full">
+                                <source
+                                  type="image/webp"
+                                  srcSet={item.imgSet}
+                                  sizes="100vw"
+                                />
+                                <img
+                                  src={item.imgSrc}
+                                  srcSet={item.imgSet}
+                                  sizes="100vw"
+                                  alt={item.title.replace(/\s/g, "")}
+                                  className="h-full w-full object-cover"
+                                  loading="lazy"
+                                  style={{ opacity: isActive ? 1 : 0.85 }}
+                                />
+                              </picture>
+                            </div>
+                          </div>
+
+                          <div className="col-start-1 row-start-1 p-3 z-20 flex justify-end items-start lg:items-end lg:p-5">
                             {item.category ? (
                               <div
-                                className="shrink-0 inline-flex items-center rounded-full tracking-tight font-medium leading-none text-current bg-white/15 backdrop-blur-sm text-sm gap-x-3 py-2.5 px-3.5 lg:text-base"
+                                className="shrink-0 inline-flex items-center rounded-full tracking-tight font-medium leading-none text-white bg-white/20 backdrop-blur-sm text-sm gap-x-3 py-2.5 px-3.5 lg:text-base"
                                 style={{ backdropFilter: "blur(8px)" }}
                               >
                                 <i
@@ -474,10 +422,61 @@ function FeaturedWork() {
                               </div>
                             ) : null}
                           </div>
-                        </div>
-                      </a>
-                    );
-                  })}
+
+                          <div className="col-start-1 row-start-1 p-3 z-20 relative flex justify-start items-end lg:hidden lg:p-5">
+                            <div className="grid gap-y-1 relative z-20">
+                              <div className="text-white/70 text-xs font-medium mt-2">
+                                {item.date}
+                              </div>
+                              <Heading className="text-white text-3xl/none lg:text-5xl/none xl:text-6xl/none 3xl:text-7xl/0.9 font-sans-primary font-medium tracking-tight js-heading">
+                                {item.title}
+                              </Heading>
+                            </div>
+                            <div className="absolute w-full bottom-0 left-0 h-32 bg-linear-to-t from-black/90 via-black/40 to-transparent z-10 pointer-events-none" />
+                          </div>
+
+                          <div
+                            className={`col-start-1 row-start-1 grid-cols-12 flex flex-col items-start justify-between z-30 p-3 lg:p-5 circle-mask ${
+                              shouldReveal
+                                ? "active opacity-100"
+                                : "opacity-0 pointer-events-none"
+                            }`}
+                            style={{
+                              backgroundColor: item.colour,
+                              color: "#111212",
+                              clipPath: shouldReveal
+                                ? "circle(140% at 50% 100%)"
+                                : "circle(0% at 50% 100%)",
+                              transition:
+                                "clip-path 0.8s cubic-bezier(0.22,1,0.36,1), opacity 0.5s ease",
+                            }}
+                          >
+                            <Heading className="text-current text-3xl/none lg:text-4xl/none xl:text-5xl/none 3xl:text-6xl/none font-sans-primary font-medium tracking-tight js-heading">
+                              {item.subtitle}
+                            </Heading>
+                            <div className="w-full flex items-end justify-between">
+                              <div className="w-8 lg:w-24" />
+                              {item.category ? (
+                                <div
+                                  className="shrink-0 inline-flex items-center rounded-full tracking-tight font-medium leading-none text-current bg-white/15 backdrop-blur-sm text-sm gap-x-3 py-2.5 px-3.5 lg:text-base"
+                                  style={{ backdropFilter: "blur(8px)" }}
+                                >
+                                  <i
+                                    className="fa-regular fa-sharp fa-magnifying-glass"
+                                    aria-hidden="true"
+                                  ></i>
+                                  <div>{item.category}</div>
+                                  <i
+                                    className={`fa-regular fa-sharp ${item.icon}`}
+                                    aria-hidden="true"
+                                  ></i>
+                                </div>
+                              ) : null}
+                            </div>
+                          </div>
+                        </a>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
@@ -494,16 +493,49 @@ function FeaturedWork() {
               <div className="transition pointer-fine:group-hover:-translate-y-6">
                 <div className="flex items-center gap-x-2">
                   <span>Explore Our Work</span>
-                  <span className="inline-block align-middle motion-safe:transition text-xs mt-1" aria-hidden="true">
-                    <i className="fa-regular fa-sharp fa-arrow-up-right" aria-hidden="true"></i>
+                  <span
+                    className="inline-block align-middle motion-safe:transition text-xs mt-1"
+                    aria-hidden="true"
+                  >
+                    <svg
+                      className="w-4 h-4 text-grey-900"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M7 17L17 7M17 7H7M17 7V17"
+                      />
+                    </svg>
                   </span>
                 </div>
               </div>
               <div className="transition absolute top-0 left-0 translate-y-6 pointer-fine:group-hover:translate-y-0">
                 <div className="flex items-center gap-x-2">
                   <span>Explore Our Work</span>
-                  <span className="inline-block align-middle motion-safe:transition text-xs mt-1" aria-hidden="true">
-                    <i className="fa-regular fa-sharp fa-arrow-up-right" aria-hidden="true"></i>
+
+                  <span
+                    className="inline-block align-middle motion-safe:transition text-xs mt-1"
+                    aria-hidden="true"
+                  >
+                    <svg
+                      className="w-4 h-4 text-grey-900"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M7 17L17 7M17 7H7M17 7V17"
+                      />
+                    </svg>
                   </span>
                 </div>
               </div>
