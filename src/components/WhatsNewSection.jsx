@@ -291,13 +291,31 @@ const WhatsNewSection = () => {
                         <img
                           src={item.imgSrc}
                           alt={item.title}
-                          className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                          className="w-full h-full object-cover"
                           loading="lazy"
                         />
                       </picture>
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                    <div className="absolute inset-0 backdrop-blur-0 group-hover:backdrop-blur-sm transition-all duration-700" />
+                    
+                    {/* Circular reveal overlay with blur (starts hidden, expands on hover) */}
+                    <div
+                      className="absolute inset-0 bg-black/40 backdrop-blur-md flex items-center justify-center"
+                      style={{
+                        clipPath: "circle(0% at 50% 100%)",
+                        transition: "clip-path 0.8s cubic-bezier(0.22, 1, 0.36, 1)",
+                        willChange: "clip-path",
+                      }}
+                    >
+                      <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent" />
+                    </div>
+                    
+                    {/* Hover trigger to expand the circle */}
+                    <div
+                      className="absolute inset-0 group-hover:child-blur-reveal"
+                      style={{
+                        clipPath: "circle(0% at 50% 100%)",
+                      }}
+                    />
                   </div>
                   
                   <div className="flex flex-col items-start gap-y-3 w-full">
@@ -363,6 +381,12 @@ const WhatsNewSection = () => {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .group:hover .absolute.inset-0[style*="clip-path: circle(0% at 50% 100%)"] {
+          clip-path: circle(140% at 50% 100%) !important;
+        }
+      `}</style>
     </section>
   );
 };
