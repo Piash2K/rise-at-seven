@@ -65,7 +65,7 @@ const links = [
   { id: 107, label: "Webinar", href: "https://riseatseven.com/webinars/" },
 ];
 
-// Mega Menu Images
+// Mega Menu Images (unchanged)
 const serviceImages = {
   4790: "https://rise-atseven.transforms.svdcdn.com/production/images/Screenshot-2025-06-23-at-23.14.49.png?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1750847626&s=a51fa90e59f4de7a51395aaed8e58428",
   11981: "https://rise-atseven.transforms.svdcdn.com/production/images/WhatsApp-Image-2025-06-03-at-08.34.50.jpeg?w=2000&h=2000&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1766399268&s=7b53d90905d984816762e873a47f385d",
@@ -430,19 +430,21 @@ export default function Navbar() {
               ? "bg-white/55 shadow-[0_10px_30px_rgba(17,24,39,0.06)] backdrop-blur-xl"
               : "bg-transparent shadow-none"
           }`}>
-            <a href="/" className={`block w-40 transition-colors duration-300 ${scrolled || mobileMenu ? "text-black" : "text-white"}`} aria-label="Rise at Seven home">
+            {/* Logo - Left */}
+            <a href="/" className={`block w-40 shrink-0 transition-colors duration-300 ${scrolled || mobileMenu ? "text-black" : "text-white"}`} aria-label="Rise at Seven home">
               <Logo />
             </a>
 
+            {/* Navigation - Centered with increased text size and no wrap */}
             <nav
               ref={navRef}
-              className="relative ml-10 hidden items-center gap-0 text-[15px] font-semibold tracking-[-0.4px] xl:flex"
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden items-center gap-1 text-[16px] font-semibold tracking-[-0.3px] whitespace-nowrap xl:flex"
               aria-label="Primary navigation"
               onMouseLeave={handleNavMouseLeave}
             >
-              {/* Hover background - positioned absolutely within nav */}
+              {/* Hover background - smaller height */}
               <div 
-                className="nav-hover-bg absolute rounded-full h-[calc(100%-8px)] top-1 bg-[#f4f5f7] transition-all duration-300 pointer-events-none"
+                className="nav-hover-bg absolute rounded-full h-9 top-1/2 -translate-y-1/2 bg-[#f4f5f7] transition-all duration-300 pointer-events-none"
                 style={{ opacity: 0, width: 0, left: 0 }}
               />
               
@@ -450,7 +452,7 @@ export default function Navbar() {
                 <a
                   key={link.id}
                   href={link.href}
-                  className={`relative inline-flex items-center gap-0.5 rounded-full px-5 py-2 transition-colors duration-300 z-10 ${
+                  className={`relative inline-flex items-center gap-0.5 rounded-full px-4 py-1.5 transition-colors duration-300 z-10 ${
                     scrolled || mobileMenu
                       ? activeMega === link.id ? "text-black" : "text-[#1e1e1e] hover:text-black"
                       : activeMega === link.id ? "text-black" : "text-white hover:text-black"
@@ -458,7 +460,7 @@ export default function Navbar() {
                   onMouseEnter={(e) => handleNavMouseEnter(link.id, e)}
                 >
                   {link.label}
-                  {link.plus && <span className="ml-0.5">+</span>}
+                  {link.plus && <span className="ml-0.5 text-[13px]">+</span>}
                   {link.badge && (
                     <em className="absolute -right-2.5 -top-2.5 grid h-4 min-w-5 place-items-center rounded-full bg-[#b9f1db] px-1 text-[9px] not-italic leading-none text-[#164432]">
                       {link.badge}
@@ -468,9 +470,10 @@ export default function Navbar() {
               ))}
             </nav>
 
+            {/* Get in touch button - Right */}
             <a
               href="https://riseatseven.com/connect-with-us/"
-              className={`ml-auto hidden min-h-11 min-w-38.5 items-center justify-center gap-2 rounded-full text-[15px] font-bold tracking-[-0.35px] transition-colors duration-300 hover:opacity-90 xl:inline-flex ${
+              className={`ml-auto shrink-0 hidden min-h-11 min-w-38.5 items-center justify-center gap-2 rounded-full text-[15px] font-bold tracking-[-0.35px] transition-colors duration-300 hover:opacity-90 xl:inline-flex ${
                 scrolled || mobileMenu
                   ? "bg-[#1e1e1e] text-white"
                   : "bg-white text-black"
@@ -480,6 +483,7 @@ export default function Navbar() {
               <span className="font-light">↗</span>
             </a>
 
+            {/* Mobile menu button */}
             <button
               type="button"
               className="ml-auto inline-flex h-9 w-12 flex-col items-center justify-center gap-1.5 xl:hidden"
