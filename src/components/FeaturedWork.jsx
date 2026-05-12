@@ -241,7 +241,7 @@ function FeaturedWork() {
         },
       });
 
-      timeline.to(leftList, { y: -leftShift * 2.55, ease: "none" }, 0);
+      timeline.to(leftList, { y: -leftShift * 3.85, ease: "none" }, 0);
       timeline.to(rightList, { y: -rightShift, ease: "none" }, 0);
 
     }, sectionRef);
@@ -322,7 +322,7 @@ function FeaturedWork() {
                               onMouseLeave={() => setHoveredId(null)}
                             >
                               <Heading
-                                className={`font-sans-primary font-medium text-6xl/none lg:text-7xl/none xl:text-8xl/0.9 3xl:text-8xl/0.9 4xl:text-9xl/0.9 js-heading transition-all duration-700 ${
+                                className={`font-sans-primary font-medium text-6xl/none lg:text-8xl/none xl:text-8xl/0.9 3xl:text-8xl/0.9 4xl:text-9xl/0.9 js-heading transition-all duration-700 ${
                                   isActive ? "tracking-[-0.04em]" : "tracking-tight"
                                 }`}
                                 style={{
