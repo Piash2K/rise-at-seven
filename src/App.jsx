@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Home from "./pages/Home";
+import CustomCursor from "./shared/CustomCursor";
 
 let introHasPlayed = false;
 
@@ -8,15 +9,19 @@ function MintRevealOverlay() {
   const overlayRef = useRef(null);
   const revealEllipseRef = useRef(null);
   const [isVisible, setIsVisible] = useState(() => {
-    const prefersReducedMotion = typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const isFinePointer = typeof window !== "undefined" && window.matchMedia("(pointer: fine)").matches;
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const isFinePointer =
+      typeof window !== "undefined" &&
+      window.matchMedia("(pointer: fine)").matches;
 
     return !introHasPlayed && !prefersReducedMotion && isFinePointer;
   });
   const [viewport] = useState(() =>
     typeof window !== "undefined"
       ? { width: window.innerWidth, height: window.innerHeight }
-      : { width: 1920, height: 1080 }
+      : { width: 1920, height: 1080 },
   );
 
   useEffect(() => {
@@ -24,7 +29,9 @@ function MintRevealOverlay() {
       return undefined;
     }
 
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
     const isFinePointer = window.matchMedia("(pointer: fine)").matches;
     let timeline;
 
@@ -115,7 +122,12 @@ function MintRevealOverlay() {
           </mask>
         </defs>
 
-        <rect width="100%" height="100%" fill="#B2F6E3" mask="url(#mint-reveal-mask)" />
+        <rect
+          width="100%"
+          height="100%"
+          fill="#B2F6E3"
+          mask="url(#mint-reveal-mask)"
+        />
       </svg>
     </div>
   );
@@ -124,6 +136,7 @@ function MintRevealOverlay() {
 function App() {
   return (
     <>
+      <CustomCursor></CustomCursor>
       <MintRevealOverlay />
       <Home className="bg-grey-100" />
     </>

@@ -281,7 +281,7 @@ const WhatsNewSection = () => {
                 >
                   <a
                     href="https://riseatseven.com/blog/rise-at-seven-appoints-new-senior-ops-lead/"
-                    className="w-full flex flex-col items-start gap-y-5 transition-transform duration-300 group-hover:-translate-y-2 circle-mask-container"
+                    className="cursor-trigger w-full flex flex-col items-start gap-y-5 transition-transform duration-300 group-hover:-translate-y-2 circle-mask-container"
                   >
                     <div className="w-full grid">
                       <div className="col-start-1 row-start-1 z-20 p-3"></div>
@@ -357,7 +357,7 @@ const WhatsNewSection = () => {
                 >
                   <a
                     href="https://riseatseven.com/blog/rise-at-seven-announces-new-global-hq-in-manchester/"
-                    className="w-full flex flex-col items-start gap-y-5 transition-transform duration-300 group-hover:-translate-y-2 circle-mask-container"
+                    className="cursor-trigger w-full flex flex-col items-start gap-y-5 transition-transform duration-300 group-hover:-translate-y-2 circle-mask-container"
                   >
                     <div className="w-full grid">
                       <div className="col-start-1 row-start-1 z-20 p-3"></div>
@@ -433,7 +433,7 @@ const WhatsNewSection = () => {
                 >
                   <a
                     href="https://riseatseven.com/blog/global-operations-director-promotion/"
-                    className="w-full flex flex-col items-start gap-y-5 transition-transform duration-300 group-hover:-translate-y-2 circle-mask-container"
+                    className="cursor-trigger w-full flex flex-col items-start gap-y-5 transition-transform duration-300 group-hover:-translate-y-2 circle-mask-container"
                   >
                     <div className="w-full grid">
                       <div className="col-start-1 row-start-1 z-20 p-3">

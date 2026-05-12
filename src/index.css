@@ -9,3 +9,26 @@ body {
 #root {
   background-color: #f4f1ec;
 }
+/* Hide default cursor on all cursor-trigger elements and their children */
+.cursor-trigger,
+.cursor-trigger *,
+.cursor-trigger:hover,
+.cursor-trigger a,
+.cursor-trigger img,
+.cursor-trigger div,
+.cursor-trigger picture {
+  cursor: none !important;
+}
+
+/* Ensure body cursor is auto by default */
+body {
+  cursor: auto;
+}
+
+/* For touch devices, show default cursor */
+@media (max-width: 768px) {
+  .cursor-trigger,
+  .cursor-trigger * {
+    cursor: pointer !important;
+  }
+}
