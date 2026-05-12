@@ -14,7 +14,9 @@ export default function DemandDiscoverySection() {
                   <div className="flex items-center gap-x-2">
                     <span>Our Story</span>
                     <span className="inline-block align-middle motion-safe:transition text-xs mt-1" aria-hidden="true">
-                      <i className="fa-regular fa-sharp fa-arrow-up-right" aria-hidden="true"></i>
+                      <svg className="w-4 h-4 text-grey-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 17L17 7M17 7H7M17 7V17" />
+                      </svg>
                     </span>
                   </div>
                 </div>
@@ -22,7 +24,9 @@ export default function DemandDiscoverySection() {
                   <div className="flex items-center gap-x-2">
                     <span>Our Story</span>
                     <span className="inline-block align-middle motion-safe:transition text-xs mt-1" aria-hidden="true">
-                      <i className="fa-regular fa-sharp fa-arrow-up-right" aria-hidden="true"></i>
+                      <svg className="w-4 h-4 text-grey-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 17L17 7M17 7H7M17 7V17" />
+                      </svg>
                     </span>
                   </div>
                 </div>
@@ -35,7 +39,9 @@ export default function DemandDiscoverySection() {
                   <div className="flex items-center gap-x-2">
                     <span>Our Services</span>
                     <span className="inline-block align-middle motion-safe:transition text-xs mt-1" aria-hidden="true">
-                      <i className="fa-regular fa-sharp fa-arrow-up-right" aria-hidden="true"></i>
+                      <svg className="w-4 h-4 text-grey-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 17L17 7M17 7H7M17 7V17" />
+                      </svg>
                     </span>
                   </div>
                 </div>
@@ -43,7 +49,9 @@ export default function DemandDiscoverySection() {
                   <div className="flex items-center gap-x-2">
                     <span>Our Services</span>
                     <span className="inline-block align-middle motion-safe:transition text-xs mt-1" aria-hidden="true">
-                      <i className="fa-regular fa-sharp fa-arrow-up-right" aria-hidden="true"></i>
+                      <svg className="w-4 h-4 text-grey-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 17L17 7M17 7H7M17 7V17" />
+                      </svg>
                     </span>
                   </div>
                 </div>
@@ -82,7 +90,9 @@ export default function DemandDiscoverySection() {
                     <div className="flex items-center gap-x-2">
                       <span>Our Story</span>
                       <span className="inline-block align-middle motion-safe:transition text-xs mt-1" aria-hidden="true">
-                        <i className="fa-regular fa-sharp fa-arrow-up-right" aria-hidden="true"></i>
+                        <svg className="w-4 h-4 text-grey-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 17L17 7M17 7H7M17 7V17" />
+                        </svg>
                       </span>
                     </div>
                   </div>
@@ -90,7 +100,9 @@ export default function DemandDiscoverySection() {
                     <div className="flex items-center gap-x-2">
                       <span>Our Story</span>
                       <span className="inline-block align-middle motion-safe:transition text-xs mt-1" aria-hidden="true">
-                        <i className="fa-regular fa-sharp fa-arrow-up-right" aria-hidden="true"></i>
+                        <svg className="w-4 h-4 text-grey-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 17L17 7M17 7H7M17 7V17" />
+                        </svg>
                       </span>
                     </div>
                   </div>
@@ -103,7 +115,9 @@ export default function DemandDiscoverySection() {
                     <div className="flex items-center gap-x-2">
                       <span>Our Services</span>
                       <span className="inline-block align-middle motion-safe:transition text-xs mt-1" aria-hidden="true">
-                        <i className="fa-regular fa-sharp fa-arrow-up-right" aria-hidden="true"></i>
+                        <svg className="w-4 h-4 text-grey-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 17L17 7M17 7H7M17 7V17" />
+                        </svg>
                       </span>
                     </div>
                   </div>
@@ -111,7 +125,9 @@ export default function DemandDiscoverySection() {
                     <div className="flex items-center gap-x-2">
                       <span>Our Services</span>
                       <span className="inline-block align-middle motion-safe:transition text-xs mt-1" aria-hidden="true">
-                        <i className="fa-regular fa-sharp fa-arrow-up-right" aria-hidden="true"></i>
+                        <svg className="w-4 h-4 text-grey-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 17L17 7M17 7H7M17 7V17" />
+                        </svg>
                       </span>
                     </div>
                   </div>
