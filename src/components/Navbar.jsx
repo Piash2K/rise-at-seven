@@ -424,10 +424,10 @@ export default function Navbar() {
       />
 
       <header className={`fixed left-0 right-0 top-0 z-50 transition-transform duration-700 ${hideHeader ? "-translate-y-full" : "translate-y-0"}`}>
-        <div className="px-3 pt-2 md:px-8 md:pt-3">
-          <div className={`relative mx-auto flex h-18 max-w-350 items-center rounded-full px-3 transition-all duration-500 md:h-22 md:px-5 ${
+        <div className="w-full px-2 pt-2 md:px-3 md:pt-3">
+          <div className={`relative flex h-16 w-full items-center rounded-full px-2 transition-all duration-500 md:h-18 md:px-3 ${
             scrolled || mobileMenu
-              ? "bg-[#f3f1eb]/85 shadow-[0_10px_30px_rgba(17,24,39,0.06)] backdrop-blur-xl"
+              ? "bg-white/55 shadow-[0_10px_30px_rgba(17,24,39,0.06)] backdrop-blur-xl"
               : "bg-transparent shadow-none"
           }`}>
             <a href="/" className={`block w-40 transition-colors duration-300 ${scrolled || mobileMenu ? "text-black" : "text-white"}`} aria-label="Rise at Seven home">
@@ -450,7 +450,7 @@ export default function Navbar() {
                 <a
                   key={link.id}
                   href={link.href}
-                  className={`relative inline-flex items-center gap-0.5 rounded-full px-4 py-1.5 transition-colors duration-300 z-10 ${
+                  className={`relative inline-flex items-center gap-0.5 rounded-full px-5 py-2 transition-colors duration-300 z-10 ${
                     scrolled || mobileMenu
                       ? activeMega === link.id ? "text-black" : "text-[#1e1e1e] hover:text-black"
                       : activeMega === link.id ? "text-black" : "text-white hover:text-black"
@@ -470,7 +470,7 @@ export default function Navbar() {
 
             <a
               href="https://riseatseven.com/connect-with-us/"
-              className={`ml-auto mr-3 hidden min-h-11 min-w-38.5 items-center justify-center gap-2 rounded-full text-[15px] font-bold tracking-[-0.35px] transition-colors duration-300 hover:opacity-90 xl:inline-flex ${
+              className={`ml-auto hidden min-h-11 min-w-38.5 items-center justify-center gap-2 rounded-full text-[15px] font-bold tracking-[-0.35px] transition-colors duration-300 hover:opacity-90 xl:inline-flex ${
                 scrolled || mobileMenu
                   ? "bg-[#1e1e1e] text-white"
                   : "bg-white text-black"
