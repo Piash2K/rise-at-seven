@@ -159,10 +159,11 @@ const workItems = [
   },
 ];
 
-const Heading = ({ children, className = "" }) => {
+const Heading = ({ children, className = "", style }) => {
   return (
     <div
       className={`inline-flex flex-wrap text-balance relative text-left justify-start ${className}`}
+      style={style}
     >
       {children}
     </div>
@@ -175,9 +176,14 @@ function FeaturedWork() {
   const sectionRef = useRef(null);
   const panelRef = useRef(null);
   const leftListRef = useRef(null);
+  const rightViewportRef = useRef(null);
   const rightListRef = useRef(null);
+  const headingRefs = useRef({});
   const [hoveredId, setHoveredId] = useState(null);
   const [scrollActiveIndex, setScrollActiveIndex] = useState(0);
+
+  const activeId =
+    hoveredId ?? workItems[scrollActiveIndex]?.id ?? workItems[0].id;
 
   useLayoutEffect(() => {
     if (!sectionRef.current || !panelRef.current) return;
@@ -185,74 +191,112 @@ function FeaturedWork() {
     gsap.registerPlugin(ScrollTrigger);
 
     const leftList = leftListRef.current;
+    const rightViewport = rightViewportRef.current;
     const rightList = rightListRef.current;
 
-    if (!leftList || !rightList) return undefined;
+    if (!leftList || !rightViewport || !rightList) return undefined;
 
     const leftShift = Math.max(
       leftList.scrollHeight - leftList.clientHeight,
       0,
     );
     const rightShift = Math.max(
-      rightList.scrollHeight - rightList.clientHeight,
+      rightList.scrollHeight -
+        Math.max(
+          rightViewport.clientHeight -
+            (parseFloat(window.getComputedStyle(rightViewport).paddingTop) ||
+              0) -
+            (parseFloat(
+              window.getComputedStyle(rightViewport).paddingBottom,
+            ) ||
+              0),
+          0,
+        ),
       0,
     );
 
-    gsap.set(leftList, { y: 150, willChange: "transform" });
-    gsap.set(rightList, { y: 0, willChange: "transform" });
+    const ctx = gsap.context(() => {
+      gsap.set(leftList, { y: 150, willChange: "transform" });
+      gsap.set(rightList, { y: 0, willChange: "transform" });
 
-    const timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top top",
-        end: `+=${workItems.length * window.innerHeight}`,
-        scrub: 1,
-        pin: panelRef.current,
-        pinSpacing: true,
-        anticipatePin: 1,
-        invalidateOnRefresh: true,
-        onUpdate: (self) => {
-          setScrollActiveIndex(
-            Math.round(self.progress * (workItems.length - 1)),
-          );
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: `+=${workItems.length * window.innerHeight}`,
+          scrub: 1,
+          pin: panelRef.current,
+          pinSpacing: true,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+          onUpdate: (self) => {
+            setScrollActiveIndex(
+              clamp(
+                Math.floor(self.progress * workItems.length),
+                0,
+                workItems.length - 1,
+              ),
+            );
+          },
         },
-      },
-    });
+      });
 
-    timeline.to(leftList, { y: -leftShift * 0.58, ease: "none" }, 0);
-    timeline.to(rightList, { y: -rightShift, ease: "none" }, 0);
+      timeline.to(leftList, { y: -leftShift * 2.55, ease: "none" }, 0);
+      timeline.to(rightList, { y: -rightShift, ease: "none" }, 0);
 
-    return () => {
-      timeline.scrollTrigger?.kill();
-      timeline.kill();
-    };
+    }, sectionRef);
+
+    return () => ctx.revert();
   }, []);
 
-  const activeId =
-    hoveredId ?? workItems[scrollActiveIndex]?.id ?? workItems[0].id;
+  useLayoutEffect(() => {
+    const activeHeading = headingRefs.current[activeId];
+
+    if (!activeHeading) return;
+
+    gsap.fromTo(
+      activeHeading,
+      { yPercent: 20, autoAlpha: 0.7 },
+      {
+        yPercent: 0,
+        autoAlpha: 1,
+        duration: 0.8,
+        ease: "power4.out",
+        overwrite: true,
+      },
+    );
+  }, [activeId]);
 
   return (
-    <section className="w-full bg-black">
-      <div className="w-full px-4 md:px-7">
+    <section className="w-full">
+      <div className="w-full px-3 md:px-5">
         <div
           ref={sectionRef}
           className="w-full relative flex overflow-hidden"
-          style={{ height: `${workItems.length * 100 + 120}vh` }}
+          style={{ height: `${workItems.length * 100 + 100}vh` }}
         >
           <div
             ref={panelRef}
             className="w-full py-7 h-screen-fix-110 pointer-fine:h-screen-fix"
           >
-            <div className="w-full h-full overflow-hidden bg-black rounded-3xl grid grid-cols-12 px-5 lg:pl-8 lg:pr-8 xl:pl-10 xl:pr-10">
+            <div className="w-full h-screen lg:h-[96svh] overflow-hidden bg-black rounded-2xl rounded-b-2xl lg:rounded-3xl lg:rounded-b-3xl grid grid-cols-12 px-5 lg:pl-8 lg:pr-8 xl:pl-10 xl:pr-10">
               <div className="relative col-span-12 hidden items-start lg:flex lg:flex-row lg:items-center lg:col-span-6 lg:h-[96svh] 4xl:col-span-6">
                 <div className="flex flex-col items-start relative z-10 h-full pt-16 lg:pt-24 lg:pb-32 lg:gap-y-20">
                   <Heading className="sticky top-6 z-20 text-white text-md/tight lg:text-lg/tight xl:text-xl/tight 4xl:text-2xl/none font-sans-primary font-medium tracking-tight js-heading">
                     Featured Work
                   </Heading>
 
-                  <div className="relative flex-1 overflow-hidden pr-5 lg:inline-block text-white">
-                    <div className="absolute top-0 left-0 hidden h-24 w-full pointer-events-none lg:block bg-linear-to-b from-black via-black to-transparent" />
-                    <div className="absolute bottom-0 left-0 hidden h-24 w-full pointer-events-none lg:block bg-linear-to-t from-black via-black to-transparent" />
+                  <div
+                    className="relative flex-1 overflow-hidden pr-5 lg:inline-block text-white"
+                    style={{
+                      WebkitMaskImage:
+                        "linear-gradient(to bottom, transparent 0%, black 14%, black 86%, transparent 100%)",
+                      maskImage:
+                        "linear-gradient(to bottom, transparent 0%, black 14%, black 86%, transparent 100%)",
+                    }}
+                  >
+                    <div className="absolute top-0 left-0 hidden h-28 w-full pointer-events-none lg:block bg-linear-to-b from-black/80 via-black/30 to-transparent" />
+                    <div className="absolute bottom-0 left-0 hidden h-28 w-full pointer-events-none lg:block bg-linear-to-t from-black/80 via-black/30 to-transparent" />
 
                     <div
                       ref={leftListRef}
@@ -260,8 +304,11 @@ function FeaturedWork() {
                     >
                       {workItems.map((item, index) => {
                         const isActive = activeId === item.id;
+                        const signedDistance = index - scrollActiveIndex;
                         const distance = Math.abs(scrollActiveIndex - index);
-                        const opacity = clamp(1 - distance * 0.18, 0.5, 1);
+                        const opacity = clamp(1 - distance * 0.2, 0.35, 1);
+                        const scale = clamp(1 - distance * 0.06, 0.82, 1);
+                        const y = signedDistance * 24;
 
                         return (
                           <div
@@ -270,26 +317,34 @@ function FeaturedWork() {
                           >
                             <a
                               href={item.href}
-                              className={`flex items-start gap-x-2 transition-all duration-300 ${isActive ? "translate-x-3" : ""}`}
+                              className={`flex items-start gap-x-2 transition-all duration-500 ${isActive ? "translate-x-2" : ""}`}
                               onMouseEnter={() => setHoveredId(item.id)}
                               onMouseLeave={() => setHoveredId(null)}
                             >
                               <Heading
-                                className="font-sans-primary font-medium tracking-tight text-5xl/none lg:text-6xl/none xl:text-7xl/0.9 3xl:text-7.5xl/0.9 4xl:text-8xl/0.9 js-heading"
-                              style={{
-  color: isActive
-    ? "#ffffff"
-    : `rgba(255,255,255,${opacity})`,
-  textShadow: isActive
-    ? "0 0 30px rgba(255,255,255,0.15)"
-    : "none",
-}}
+                                className={`font-sans-primary font-medium text-6xl/none lg:text-7xl/none xl:text-8xl/0.9 3xl:text-8xl/0.9 4xl:text-9xl/0.9 js-heading transition-all duration-700 ${
+                                  isActive ? "tracking-[-0.04em]" : "tracking-tight"
+                                }`}
+                                style={{
+                                  color: isActive
+                                    ? "#ffffff"
+                                    : `rgba(255,255,255,${opacity})`,
+                                  transform: `translateY(${y}px) scale(${scale})`,
+                                  textShadow: isActive
+                                    ? "0 0 30px rgba(255,255,255,0.15)"
+                                    : "none",
+                                  transition:
+                                    "transform 0.8s cubic-bezier(0.22,1,0.36,1), color 0.45s ease",
+                                  willChange: "transform, color",
+                                }}
+                                ref={(el) => {
+                                  if (el) {
+                                    headingRefs.current[item.id] = el;
+                                  }
+                                }}
                               >
                                 {item.title}
                               </Heading>
-                              <div className="text-white/60 text-xs font-medium mt-2">
-                                {item.date}
-                              </div>
                             </a>
                           </div>
                         );
@@ -299,27 +354,34 @@ function FeaturedWork() {
                 </div>
               </div>
 
-              <div className="col-span-12 relative overflow-hidden bg-black pt-7 pb-14 lg:col-span-6 lg:col-start-7 3xl:col-span-5 3xl:col-start-8 4xl:col-span-5 4xl:col-start-8 js-images-40">
+              <div className="col-span-12 relative overflow-hidden lg:col-span-6 lg:col-start-7 3xl:col-span-5 3xl:col-start-8 4xl:col-span-5 4xl:col-start-8 js-images-40">
                 <div className="mb-5 lg:hidden">
                   <Heading className="text-white text-md/tight lg:text-lg/tight xl:text-xl/tight 4xl:text-2xl/none font-sans-primary font-medium tracking-tight js-heading">
                     Featured Work
                   </Heading>
                 </div>
 
-                <div ref={rightListRef} className="relative lg:h-[96svh]">
+                <div
+                  ref={rightViewportRef}
+                  className="relative h-full lg:h-[96svh] pt-7 pb-7 pr-5"
+                >
+                  <div ref={rightListRef} className="relative">
                   {workItems.map((item, index) => {
                     const isActive = activeId === item.id;
+                    const shouldReveal = hoveredId === item.id;
 
                     return (
                       <a
                         key={item.id}
                         href={item.href}
-                        className={`grid group overflow-hidden rounded-2xl mb-5 lg:mb-7 circle-mask-container ${isActive ? "is-active" : ""}`}
-                        style={{ zIndex: workItems.length - index }}
+                        className={`grid group overflow-hidden rounded-3xl mb-5 lg:mb-7 circle-mask-container ${isActive ? "is-active" : ""}`}
+                        style={{
+                          zIndex: isActive ? 999 : workItems.length - index,
+                        }}
                         onMouseEnter={() => setHoveredId(item.id)}
                         onMouseLeave={() => setHoveredId(null)}
                       >
-                        <div className="col-start-1 row-start-1 transition pointer-fine:group-hover:scale-105">
+                        <div className="col-start-1 row-start-1">
                           <div
                             className="relative overflow-hidden w-full"
                             style={{ paddingTop: "75%" }}
@@ -335,7 +397,7 @@ function FeaturedWork() {
                                 srcSet={item.imgSet}
                                 sizes="100vw"
                                 alt={item.title.replace(/\s/g, "")}
-                                className="transition-opacity duration-500"
+                                className="h-full w-full object-cover"
                                 loading="lazy"
                                 style={{ opacity: isActive ? 1 : 0.85 }}
                               />
@@ -345,7 +407,10 @@ function FeaturedWork() {
 
                         <div className="col-start-1 row-start-1 p-3 z-20 flex justify-end items-start lg:items-end lg:p-5">
                           {item.category ? (
-                            <div className="shrink-0 inline-flex items-center rounded-full tracking-tight font-medium leading-none text-white bg-white/20 backdrop-blur-sm text-sm gap-x-3 py-2.5 px-3.5 lg:text-base">
+                            <div
+                              className="shrink-0 inline-flex items-center rounded-full tracking-tight font-medium leading-none text-white bg-white/20 backdrop-blur-sm text-sm gap-x-3 py-2.5 px-3.5 lg:text-base"
+                              style={{ backdropFilter: "blur(8px)" }}
+                            >
                               <i
                                 className="fa-regular fa-sharp fa-magnifying-glass"
                                 aria-hidden="true"
@@ -368,18 +433,23 @@ function FeaturedWork() {
                               {item.title}
                             </Heading>
                           </div>
-                          <div className="absolute w-full bottom-0 left-0 h-32 bg-linear-to-t from-black to-transparent z-10 pointer-events-none" />
+                          <div className="absolute w-full bottom-0 left-0 h-32 bg-linear-to-t from-black/90 via-black/40 to-transparent z-10 pointer-events-none" />
                         </div>
 
                         <div
-                          className={`col-start-1 row-start-1 grid-cols-12 flex flex-col items-start justify-between z-30 p-3 transition-all duration-500 lg:p-5 circle-mask ${
-                            isActive
-                              ? "opacity-100"
+                          className={`col-start-1 row-start-1 grid-cols-12 flex flex-col items-start justify-between z-30 p-3 lg:p-5 circle-mask ${
+                            shouldReveal
+                              ? "active opacity-100"
                               : "opacity-0 pointer-events-none"
                           }`}
                           style={{
                             backgroundColor: item.colour,
                             color: "#111212",
+                            clipPath: shouldReveal
+                              ? "circle(140% at 50% 100%)"
+                              : "circle(0% at 50% 100%)",
+                            transition:
+                              "clip-path 0.8s cubic-bezier(0.22,1,0.36,1), opacity 0.5s ease",
                           }}
                         >
                           <Heading className="text-current text-3xl/none lg:text-4xl/none xl:text-5xl/none 3xl:text-6xl/none font-sans-primary font-medium tracking-tight js-heading">
@@ -388,7 +458,10 @@ function FeaturedWork() {
                           <div className="w-full flex items-end justify-between">
                             <div className="w-8 lg:w-24" />
                             {item.category ? (
-                              <div className="shrink-0 inline-flex items-center rounded-full tracking-tight font-medium leading-none text-current bg-white/15 backdrop-blur-sm text-sm gap-x-3 py-2.5 px-3.5 lg:text-base">
+                              <div
+                                className="shrink-0 inline-flex items-center rounded-full tracking-tight font-medium leading-none text-current bg-white/15 backdrop-blur-sm text-sm gap-x-3 py-2.5 px-3.5 lg:text-base"
+                                style={{ backdropFilter: "blur(8px)" }}
+                              >
                                 <i
                                   className="fa-regular fa-sharp fa-magnifying-glass"
                                   aria-hidden="true"
@@ -405,44 +478,32 @@ function FeaturedWork() {
                       </a>
                     );
                   })}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="flex justify-center mt-3 pb-12 lg:pb-24">
+        <div className="flex justify-center mt-8 lg:mt-10 pb-12 lg:pb-24">
           <a
             href="https://riseatseven.com/work/"
-            target=""
-            className="w-full group inline-flex shrink-0 justify-center gap-x-2 items-center relative leading-tight tracking-tightish capitalize font-sans-primary! font-medium overflow-hidden border border-transparent cursor-pointer focus:outline-none md:w-auto text-base px-6 py-3 rounded-3xl transition transition-rounded focus:ring-3 pointer-fine:hover:rounded-xl bg-white text-black ring-grey-900/5 flex-row-reverse"
+            className="w-full md:w-auto group inline-flex shrink-0 justify-center gap-x-2 items-center relative leading-tight tracking-tightish capitalize font-sans-primary! font-medium overflow-hidden border border-transparent cursor-pointer focus:outline-none text-base px-6 py-3 rounded-full transition transition-rounded focus:ring-3 pointer-fine:hover:rounded-2xl bg-white text-black ring-grey-900/5 flex-row-reverse"
           >
             <div className="relative overflow-hidden">
               <div className="transition pointer-fine:group-hover:-translate-y-6">
                 <div className="flex items-center gap-x-2">
                   <span>Explore Our Work</span>
-                  <span
-                    className="inline-block align-middle motion-safe:transition text-xs mt-1"
-                    aria-hidden="true"
-                  >
-                    <i
-                      className="fa-regular fa-sharp fa-arrow-up-right"
-                      aria-hidden="true"
-                    ></i>
+                  <span className="inline-block align-middle motion-safe:transition text-xs mt-1" aria-hidden="true">
+                    <i className="fa-regular fa-sharp fa-arrow-up-right" aria-hidden="true"></i>
                   </span>
                 </div>
               </div>
               <div className="transition absolute top-0 left-0 translate-y-6 pointer-fine:group-hover:translate-y-0">
                 <div className="flex items-center gap-x-2">
                   <span>Explore Our Work</span>
-                  <span
-                    className="inline-block align-middle motion-safe:transition text-xs mt-1"
-                    aria-hidden="true"
-                  >
-                    <i
-                      className="fa-regular fa-sharp fa-arrow-up-right"
-                      aria-hidden="true"
-                    ></i>
+                  <span className="inline-block align-middle motion-safe:transition text-xs mt-1" aria-hidden="true">
+                    <i className="fa-regular fa-sharp fa-arrow-up-right" aria-hidden="true"></i>
                   </span>
                 </div>
               </div>
