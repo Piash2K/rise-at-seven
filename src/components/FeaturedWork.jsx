@@ -374,7 +374,7 @@ function FeaturedWork() {
                       <a
                         key={item.id}
                         href={item.href}
-                        className={`grid group overflow-hidden rounded-3xl mb-5 lg:mb-7 circle-mask-container ${isActive ? "is-active" : ""}`}
+                        className={`cursor-trigger grid group overflow-hidden rounded-3xl mb-5 lg:mb-7 circle-mask-container ${isActive ? "is-active" : ""}`}
                         style={{
                           zIndex: isActive ? 999 : workItems.length - index,
                         }}
